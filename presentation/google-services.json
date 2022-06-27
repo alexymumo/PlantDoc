@@ -1,33 +1,33 @@
 {
   "project_info": {
-    "project_number": "692297068229",
-    "project_id": "plantdoc-80738",
-    "storage_bucket": "plantdoc-80738.appspot.com"
+    "project_number": "683637077978",
+    "project_id": "plantdoc-2928f",
+    "storage_bucket": "plantdoc-2928f.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:692297068229:android:8298fcf1f0c995a1750aac",
+        "mobilesdk_app_id": "1:683637077978:android:1c5be44df05d8e81afb2e3",
         "android_client_info": {
           "package_name": "com.alexmumo.plantdoc"
         }
       },
       "oauth_client": [
         {
-          "client_id": "692297068229-buh6p5s4aj4t5r7v76t85m15srdol78n.apps.googleusercontent.com",
+          "client_id": "683637077978-1hobkiluopmk42cos5mvii75rodtp9cv.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyD226zflB-s1WhQyz3AMlg45BZcypL1-zw"
+          "current_key": "AIzaSyCZL1pPkU2ksCbdx0Bn01o2pjM4ggXqDmA"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "692297068229-buh6p5s4aj4t5r7v76t85m15srdol78n.apps.googleusercontent.com",
+              "client_id": "683637077978-1hobkiluopmk42cos5mvii75rodtp9cv.apps.googleusercontent.com",
               "client_type": 3
             }
           ]
