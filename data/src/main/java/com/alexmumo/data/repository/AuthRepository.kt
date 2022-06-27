@@ -3,6 +3,7 @@ package com.alexmumo.data.repository
 import com.alexmumo.data.entity.User
 import com.alexmumo.data.util.Resource
 import com.alexmumo.data.util.safeCall
+import com.google.firebase.auth.AuthResult
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.FirebaseDatabase
 import kotlinx.coroutines.Dispatchers
@@ -13,7 +14,7 @@ class AuthRepository {
     private val firebaseAuth = FirebaseAuth.getInstance()
     private val firebaseReference = FirebaseDatabase.getInstance().getReference("farmers")
 
-    suspend fun registerUser(name: String, email: String, password: String, location: String) {
+    suspend fun registerUser(name: String, email: String, password: String, location: String): Resource<AuthResult> {
         return withContext(Dispatchers.IO) {
             safeCall {
                 val register = firebaseAuth.createUserWithEmailAndPassword(email, password).await()
@@ -25,9 +26,9 @@ class AuthRepository {
         }
     }
 
-    suspend fun signIn(email: String, password: String) {
+    suspend fun signIn(email: String, password: String): Resource<AuthResult> {
         return withContext(Dispatchers.IO) {
-            val login = firebaseAuth.signInWithEmailAndPassword(email, password)
+            val login = firebaseAuth.signInWithEmailAndPassword(email, password).await()
             Resource.Success(login)
         }
     }
