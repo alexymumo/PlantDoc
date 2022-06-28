@@ -9,4 +9,13 @@
     <string name="register">Register</string>
     <string name="login">Login</string>
     <string name="authentication">Authentication</string>
+    <string name="email">Email</string>
+    <string name="password">Password</string>
+    <string name="already_have_an_account_sign_in">Already have an account? Sign In</string>
+    <string name="location">Location</string>
+    <string name="name">Name</string>
+    <string name="sign_up">Sign Up</string>
+    <string name="sign_in">Sign In</string>
+    <string name="don_t_have_an_account_sign_up">Don\'t have an account? Sign Up</string>
+    <string name="plantdoc">Plantdoc</string>
 </resources>
