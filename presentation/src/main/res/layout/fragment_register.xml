@@ -10,7 +10,7 @@
         android:textSize="40sp"
         android:textStyle="bold"
         android:gravity="center_horizontal"
-        android:layout_marginTop="50dp"
+        android:layout_marginTop="75dp"
         android:textColor="@color/teal_200"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"/>
@@ -133,7 +133,7 @@
         android:layout_width="match_parent"
         android:layout_marginTop="20dp"
         android:text="@string/register"
-
+        android:backgroundTint="@color/teal_200"
         android:layout_marginEnd="25dp"
         android:layout_marginStart="25dp"
         android:layout_height="wrap_content"/>
@@ -147,6 +147,4 @@
         android:text="@string/already_have_an_account_sign_in"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"/>
-
-
 </RelativeLayout>

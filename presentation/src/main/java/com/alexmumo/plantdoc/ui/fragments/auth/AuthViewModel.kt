@@ -1,4 +1,4 @@
-package com.alexmumo.plantdoc.ui.viewmodels
+package com.alexmumo.plantdoc.ui.fragments.auth
 
 import androidx.lifecycle.ViewModel
 import com.alexmumo.data.repository.AuthRepository

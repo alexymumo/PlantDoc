@@ -11,13 +11,14 @@
         android:textSize="40sp"
         android:textStyle="bold"
         android:gravity="center_horizontal"
-        android:layout_marginTop="100dp"
-        android:textColor="@color/black"
+        android:layout_marginTop="50dp"
+        android:textColor="@color/teal_200"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"/>
 
     <com.google.android.material.card.MaterialCardView
         android:id="@+id/login_card"
+        android:layout_marginTop="30dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="25dp"
@@ -75,21 +76,31 @@
                     android:hint="@string/password"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"/>
+
+
             </com.google.android.material.textfield.TextInputLayout>
         </androidx.constraintlayout.widget.ConstraintLayout>
     </com.google.android.material.card.MaterialCardView>
+    <TextView
+        android:id="@+id/forgot_password"
+        android:layout_marginTop="10dp"
+        android:layout_gravity="end"
+        android:paddingEnd="20dp"
+        android:textColor="@color/black"
+        android:text="@string/forgot_password"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
     <Button
         android:id="@+id/login_btn"
-        android:layout_below="@+id/login_card"
         android:layout_width="match_parent"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="10dp"
+        android:backgroundTint="@color/teal_200"
         android:text="@string/sign_in"
         android:layout_marginEnd="25dp"
         android:layout_marginStart="25dp"
         android:layout_height="wrap_content"/>
 
     <TextView
-        android:layout_below="@+id/login_btn"
         android:gravity="center_horizontal"
         android:layout_marginTop="10dp"
         android:textSize="18sp"
