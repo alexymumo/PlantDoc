@@ -25,7 +25,7 @@ class MainActivity : AppCompatActivity() {
             setOf(
                 R.id.homeFragment,
                 R.id.profileFragment,
-                R.id.settingsFragment
+                R.id.settingsFragment,
             ),
             binding.drawerLayout
         )
