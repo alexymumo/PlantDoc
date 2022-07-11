@@ -18,6 +18,9 @@
         <action
             android:id="@+id/action_homeFragment_to_mapsFragment"
             app:destination="@id/mapsFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_aboutFragment"
+            app:destination="@id/aboutFragment" />
     </fragment>
     <fragment
         android:id="@+id/splashFragment"
@@ -54,6 +57,11 @@
     <fragment
         android:id="@+id/mapsFragment"
         android:name="com.alexmumo.plantdoc.ui.fragments.location.MapsFragment"
-        android:label="fragment_maps"
+        android:label="Location"
         tools:layout="@layout/fragment_maps" />
+    <fragment
+        android:id="@+id/aboutFragment"
+        android:name="com.alexmumo.plantdoc.ui.fragments.others.AboutFragment"
+        android:label="fragment_about"
+        tools:layout="@layout/fragment_about" />
 </navigation>

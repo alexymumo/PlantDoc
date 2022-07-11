@@ -20,4 +20,6 @@
     <string name="plantdoc">Plantdoc</string>
     <string name="others">Others</string>
     <string name="forgot_password">Forgot Password?</string>
+    <string name="farmers">Farmers</string>
+    <string name="splash">splash</string>
 </resources>
