@@ -141,10 +141,19 @@
     <TextView
         android:layout_below="@+id/register_btn"
         android:gravity="center_horizontal"
+        android:id="@+id/signin_tv"
         android:layout_marginTop="10dp"
         android:textSize="18sp"
         android:textColor="@color/black"
         android:text="@string/already_have_an_account_sign_in"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"/>
+
+    <ProgressBar
+        android:id="@+id/progressBar"
+        android:layout_below="@+id/signin_tv"
+        style="?android:attr/progressBarStyle"
+        android:layout_width="wrap_content"
+        android:visibility="gone"
+        android:layout_height="wrap_content" />
 </RelativeLayout>

@@ -14,8 +14,8 @@ import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
 class LoginFragment : Fragment() {
-    private lateinit var binding: FragmentLoginBinding
     private val viewModel: AuthViewModel by viewModels()
+    private lateinit var binding: FragmentLoginBinding
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
@@ -35,11 +35,14 @@ class LoginFragment : Fragment() {
     }
 
     private fun initRegister() {
+        binding.registerTv.setOnClickListener {
+            findNavController().navigate(R.id.registerFragment)
+        }
     }
 
     private fun initForgot() {
         binding.forgotPassword.setOnClickListener {
-            findNavController().navigate(R.id.forgot_password)
+            findNavController().navigate(R.id.forgotPassword)
         }
     }
 
