@@ -66,11 +66,11 @@
     <fragment
         android:id="@+id/aboutFragment"
         android:name="com.alexmumo.plantdoc.ui.fragments.others.AboutFragment"
-        android:label="fragment_about"
+        android:label="About"
         tools:layout="@layout/fragment_about" />
     <fragment
         android:id="@+id/forgotPassword"
-        android:name="com.alexmumo.plantdoc.ForgotPassword"
+        android:name="com.alexmumo.plantdoc.ui.fragments.auth.ForgotPassword"
         android:label="Forgot Password"
         tools:layout="@layout/fragment_forgot_password" />
 </navigation>
