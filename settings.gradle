@@ -13,6 +13,4 @@ dependencyResolutionManagement {
     }
 }
 rootProject.name = "PlantDoc"
-include ':presentation'
-include ':data'
-include ':util'
+include ':app'
