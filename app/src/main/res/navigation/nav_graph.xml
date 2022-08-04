@@ -21,6 +21,9 @@
         <action
             android:id="@+id/action_homeFragment_to_aboutFragment"
             app:destination="@id/aboutFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_selectFragment"
+            app:destination="@id/selectFragment" />
     </fragment>
     <fragment
         android:id="@+id/splashFragment"
@@ -73,4 +76,9 @@
         android:name="com.alexmumo.plantdoc.ui.fragments.auth.ForgotPassword"
         android:label="Forgot Password"
         tools:layout="@layout/fragment_forgot_password" />
+    <fragment
+        android:id="@+id/selectFragment"
+        android:name="com.alexmumo.plantdoc.ui.fragments.others.SelectFragment"
+        android:label="fragment_select"
+        tools:layout="@layout/fragment_select" />
 </navigation>
