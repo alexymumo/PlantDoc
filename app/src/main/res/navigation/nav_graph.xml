@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_graph"
-    app:startDestination="@id/splashFragment">
+    app:startDestination="@id/homeFragment">
     <fragment
         android:id="@+id/homeFragment"
         android:name="com.alexmumo.plantdoc.ui.fragments.home.HomeFragment"
@@ -21,20 +21,9 @@
         <action
             android:id="@+id/action_homeFragment_to_aboutFragment"
             app:destination="@id/aboutFragment" />
-    </fragment>
-    <fragment
-        android:id="@+id/splashFragment"
-        android:name="com.alexmumo.plantdoc.ui.fragments.splash.SplashFragment"
-        tools:layout="@layout/fragment_splash">
         <action
-            android:id="@+id/action_splashFragment_to_loginFragment"
-            app:destination="@id/loginFragment" />
-        <action
-            android:id="@+id/action_splashFragment_to_registerFragment"
-            app:destination="@id/registerFragment" />
-        <action
-            android:id="@+id/action_splashFragment_to_homeFragment"
-            app:destination="@id/homeFragment" />
+            android:id="@+id/action_homeFragment_to_machineActivity"
+            app:destination="@id/machineActivity" />
     </fragment>
     <fragment
         android:id="@+id/loginFragment"
@@ -47,7 +36,11 @@
     <fragment
         android:id="@+id/registerFragment"
         android:name="com.alexmumo.plantdoc.ui.fragments.auth.RegisterFragment"
-        tools:layout="@layout/fragment_register" />
+        tools:layout="@layout/fragment_register" >
+        <action
+            android:id="@+id/action_registerFragment_to_homeFragment"
+            app:destination="@id/homeFragment" />
+    </fragment>
     <fragment
         android:id="@+id/settingsFragment"
         android:name="com.alexmumo.plantdoc.ui.fragments.settings.SettingsFragment"
@@ -72,5 +65,26 @@
         android:id="@+id/forgotPassword"
         android:name="com.alexmumo.plantdoc.ui.fragments.auth.ForgotPassword"
         android:label="Forgot Password"
-        tools:layout="@layout/fragment_forgot_password" />
+        tools:layout="@layout/fragment_forgot_password" >
+        <action
+            android:id="@+id/action_forgotPassword_to_loginFragment"
+            app:destination="@id/loginFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/dashboardFragment"
+        android:name="com.alexmumo.plantdoc.ui.fragments.auth.DashboardFragment"
+        android:label="fragment_dashboard"
+        tools:layout="@layout/fragment_dashboard" >
+        <action
+            android:id="@+id/action_dashboardFragment_to_registerFragment"
+            app:destination="@id/registerFragment" />
+        <action
+            android:id="@+id/action_dashboardFragment_to_loginFragment"
+            app:destination="@id/loginFragment" />
+    </fragment>
+    <activity
+        android:id="@+id/machineActivity"
+        android:name="com.alexmumo.plantdoc.MachineActivity"
+        android:label="activity_machine"
+        tools:layout="@layout/activity_machine" />
 </navigation>

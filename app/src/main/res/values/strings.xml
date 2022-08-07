@@ -23,4 +23,8 @@
     <string name="farmers">Farmers</string>
     <string name="splash">splash</string>
     <string name="fab1">fab1</string>
+    <string name="camera">Camera</string>
+    <string name="gallery">Gallery</string>
+    <string name="image">image</string>
+    <string name="predict">predict</string>
 </resources>

@@ -10,6 +10,9 @@
         android:icon="@drawable/ic_location"
         android:id="@+id/mapsFragment"/>
     <item
+        android:id="@+id/machineActivity"
+        android:icon="@drawable/ic_upload"/>
+    <item
         android:title="@string/profile"
         android:icon="@drawable/ic_account"
         android:id="@+id/profileFragment"/>
@@ -17,5 +20,5 @@
     <item
         android:title="@string/settings"
         android:icon="@drawable/ic_settings"
-        android:id="@+id/settingsFragment"/>
+        android:id="@+id/registerFragment"/>
 </menu>

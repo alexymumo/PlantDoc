@@ -10,6 +10,7 @@ import androidx.navigation.fragment.findNavController
 import com.alexmumo.plantdoc.R
 import com.alexmumo.plantdoc.databinding.FragmentLoginBinding
 import com.alexmumo.plantdoc.util.EventObserver
+import com.alexmumo.plantdoc.viewmodels.AuthViewModel
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint

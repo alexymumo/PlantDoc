@@ -29,12 +29,16 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }
+    aaptOptions {
+        noCompress "tflite"
+    }
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
     }
     buildFeatures {
         viewBinding true
+        mlModelBinding true
     }
     kotlinOptions {
         jvmTarget = '1.8'
@@ -56,6 +60,9 @@ dependencies {
 
     // Maps SDK
     implementation 'com.google.android.gms:play-services-maps:18.0.2'
+    implementation 'org.tensorflow:tensorflow-lite-support:0.1.0'
+    implementation 'org.tensorflow:tensorflow-lite-metadata:0.1.0'
+    implementation 'org.tensorflow:tensorflow-lite:2.4.0'
 
     // Testing
     testImplementation 'junit:junit:4.13.2'
