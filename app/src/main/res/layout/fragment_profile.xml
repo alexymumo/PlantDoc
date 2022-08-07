@@ -1,14 +1,108 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".ui.fragments.profile.ProfileFragment">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+    <ImageView
+        android:id="@+id/profileImage"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:src="@drawable/maize"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
-</FrameLayout>
+    <TextView
+        android:id="@+id/profileUsername"
+        android:layout_width="wrap_content"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="Alex Mumo"
+        android:textSize="30sp"
+        app:layout_constraintEnd_toEndOf="@+id/profileImage"
+        app:layout_constraintStart_toStartOf="@+id/profileImage"
+        app:layout_constraintTop_toBottomOf="@+id/profileImage"/>
+
+    <TextView
+        android:id="@+id/profileEmail"
+        android:layout_width="wrap_content"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="alexmumo2000@gmail.com"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="@+id/profileUsername"
+        app:layout_constraintStart_toStartOf="@+id/profileUsername"
+        app:layout_constraintTop_toBottomOf="@+id/profileUsername"/>
+
+    <ImageView
+        android:id="@+id/feedbackImage"
+        android:src="@drawable/ic_feedback"
+        android:layout_width="wrap_content"
+        android:layout_marginTop="30dp"
+        android:layout_marginStart="30dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/profileEmail"/>
+
+
+    <TextView
+        android:text="Feedback"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="10dp"
+        android:layout_marginTop="30dp"
+        android:layout_marginStart="30dp"
+        app:layout_constraintStart_toEndOf="@+id/feedbackImage"
+        app:layout_constraintTop_toBottomOf="@+id/profileEmail"/>
+
+    <ImageView
+        android:id="@+id/aboutImage"
+        android:src="@drawable/ic_about"
+        android:layout_width="wrap_content"
+        android:layout_marginTop="30dp"
+        android:layout_marginStart="30dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/feedbackImage"/>
+
+
+    <TextView
+        android:text="About Us"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="10dp"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="30dp"
+        app:layout_constraintStart_toEndOf="@+id/feedbackImage"
+        app:layout_constraintTop_toBottomOf="@+id/feedbackImage"/>
+
+
+    <ImageView
+        android:id="@+id/logoutImage"
+        android:src="@drawable/ic_logout"
+        android:layout_width="wrap_content"
+        android:layout_marginTop="30dp"
+        android:layout_marginStart="30dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/aboutImage"/>
+
+
+    <TextView
+        android:text="Logout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="10dp"
+        android:layout_marginTop="30dp"
+        android:layout_marginStart="30dp"
+        app:layout_constraintStart_toEndOf="@+id/logoutImage"
+        app:layout_constraintTop_toBottomOf="@+id/aboutImage"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

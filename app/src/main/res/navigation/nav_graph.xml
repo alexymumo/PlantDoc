@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_graph"
-    app:startDestination="@id/dashboardFragment">
+    app:startDestination="@id/homeFragment">
     <fragment
         android:id="@+id/homeFragment"
         android:name="com.alexmumo.plantdoc.ui.fragments.home.HomeFragment"
@@ -22,8 +22,8 @@
             android:id="@+id/action_homeFragment_to_aboutFragment"
             app:destination="@id/aboutFragment" />
         <action
-            android:id="@+id/action_homeFragment_to_selectFragment"
-            app:destination="@id/selectFragment" />
+            android:id="@+id/action_homeFragment_to_machineActivity"
+            app:destination="@id/machineActivity" />
     </fragment>
     <fragment
         android:id="@+id/loginFragment"
@@ -71,11 +71,6 @@
             app:destination="@id/loginFragment" />
     </fragment>
     <fragment
-        android:id="@+id/selectFragment"
-        android:name="com.alexmumo.plantdoc.ui.fragments.others.SelectFragment"
-        android:label="fragment_select"
-        tools:layout="@layout/fragment_select" />
-    <fragment
         android:id="@+id/dashboardFragment"
         android:name="com.alexmumo.plantdoc.ui.fragments.auth.DashboardFragment"
         android:label="fragment_dashboard"
@@ -87,4 +82,9 @@
             android:id="@+id/action_dashboardFragment_to_loginFragment"
             app:destination="@id/loginFragment" />
     </fragment>
+    <activity
+        android:id="@+id/machineActivity"
+        android:name="com.alexmumo.plantdoc.MachineActivity"
+        android:label="activity_machine"
+        tools:layout="@layout/activity_machine" />
 </navigation>
