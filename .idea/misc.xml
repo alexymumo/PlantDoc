@@ -5,6 +5,7 @@
       <map>
         <entry key="app/src/main/res/layout/activity_machine.xml" value="0.19322916666666667" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.16883116883116883" />
+        <entry key="app/src/main/res/layout/fragment_about.xml" value="0.19322916666666667" />
         <entry key="app/src/main/res/layout/fragment_dashboard.xml" value="0.19322916666666667" />
         <entry key="app/src/main/res/layout/fragment_forgot_password.xml" value="0.21" />
         <entry key="app/src/main/res/layout/fragment_home.xml" value="0.21614583333333334" />
@@ -13,6 +14,7 @@
         <entry key="app/src/main/res/layout/fragment_register.xml" value="0.21614583333333334" />
         <entry key="app/src/main/res/layout/fragment_select.xml" value="0.1" />
         <entry key="app/src/main/res/layout/fragment_splash.xml" value="0.21614583333333334" />
+        <entry key="app/src/main/res/layout/user_toolbar.xml" value="0.1712962962962963" />
         <entry key="app/src/main/res/menu/bottom_list.xml" value="0.19322916666666667" />
         <entry key="app/src/main/res/menu/bottom_nav.xml" value="0.21614583333333334" />
         <entry key="app/src/main/res/menu/drawer_menu.xml" value="0.21614583333333334" />
