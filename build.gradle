@@ -8,13 +8,14 @@ buildscript {
     repositories {
         google()
         mavenCentral()
+        maven { url 'https://jitpack.io' }
     }
     dependencies {
         classpath "com.google.dagger:hilt-android-gradle-plugin:$hilt_version"
         classpath "androidx.navigation:navigation-safe-args-gradle-plugin:$nav_version"
         classpath "com.android.tools.build:gradle:$gradle_version"
         classpath 'com.google.gms:google-services:4.3.13'
-        classpath 'com.google.firebase:firebase-appdistribution-gradle:3.0.2'
+        classpath 'com.google.firebase:firebase-appdistribution-gradle:3.0.3'
 
     }
 }
