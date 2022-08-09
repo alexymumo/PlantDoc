@@ -83,8 +83,8 @@
             app:destination="@id/loginFragment" />
     </fragment>
     <activity
-        android:id="@+id/machineActivity"
-        android:name="com.alexmumo.plantdoc.MachineActivity"
-        android:label="activity_machine"
-        tools:layout="@layout/activity_machine" />
+        android:id="@+id/classifierActivity"
+        android:name="com.alexmumo.plantdoc.ui.activity.ClassifierActivity"
+        android:label="activity_classifier"
+        tools:layout="@layout/activity_classifier" />
 </navigation>

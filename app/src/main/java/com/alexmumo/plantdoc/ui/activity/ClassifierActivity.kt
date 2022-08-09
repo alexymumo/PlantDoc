@@ -1,4 +1,4 @@
-package com.alexmumo.plantdoc
+package com.alexmumo.plantdoc.ui.activity
 
 import android.annotation.SuppressLint
 import android.app.Activity
@@ -14,13 +14,14 @@ import android.view.Gravity
 import android.widget.Toast
 import androidx.annotation.RequiresApi
 import androidx.appcompat.app.AppCompatActivity
-import com.alexmumo.plantdoc.databinding.ActivityMachineBinding
+import com.alexmumo.plantdoc.databinding.ActivityClassifierBinding
+import com.alexmumo.plantdoc.ml.Classifier
 import java.io.IOException
 
-class MachineActivity : AppCompatActivity() {
+class ClassifierActivity : AppCompatActivity() {
     private lateinit var bitmap: Bitmap
     private lateinit var classifier: Classifier
-    private lateinit var binding: ActivityMachineBinding
+    private lateinit var binding: ActivityClassifierBinding
 
     private val cameraRequestCode = 0
     private val galleryRequestCode = 4
@@ -35,7 +36,7 @@ class MachineActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         requestedOrientation = ActivityInfo.SCREEN_ORIENTATION_UNSPECIFIED
-        binding = ActivityMachineBinding.inflate(layoutInflater)
+        binding = ActivityClassifierBinding.inflate(layoutInflater)
         setContentView(binding.root)
         classifier = Classifier(assets, modelPath, labelPath, inputSize)
 
