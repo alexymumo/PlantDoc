@@ -28,6 +28,6 @@ class UserRepositoryImpl : UserRepository {
     }
 
     override suspend fun getCurrentUserProfile(): Resource<User> {
-        TODO("Not yet implemented")
+        TODO()
     }
 }

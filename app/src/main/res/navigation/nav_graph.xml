@@ -24,6 +24,9 @@
         <action
             android:id="@+id/action_homeFragment_to_machineActivity"
             app:destination="@id/machineActivity" />
+        <action
+            android:id="@+id/action_homeFragment_to_classifierActivity"
+            app:destination="@id/classifierActivity" />
     </fragment>
     <fragment
         android:id="@+id/loginFragment"
