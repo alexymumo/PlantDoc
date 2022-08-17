@@ -24,6 +24,7 @@
             android:value="${MAPS_API_KEY}" />
 
         <activity
+            android:theme="@style/Theme.CustomSplashScreenTheme"
             android:name=".ui.activity.MainActivity"
             android:exported="true">
             <intent-filter>

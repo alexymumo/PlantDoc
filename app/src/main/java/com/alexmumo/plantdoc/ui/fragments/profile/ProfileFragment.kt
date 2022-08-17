@@ -14,10 +14,13 @@ import androidx.activity.result.contract.ActivityResultContract
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
+import androidx.lifecycle.Observer
 import androidx.navigation.fragment.findNavController
 import com.alexmumo.plantdoc.R
 import com.alexmumo.plantdoc.databinding.FragmentProfileBinding
 import com.alexmumo.plantdoc.viewmodels.UserViewModel
+import com.bumptech.glide.Glide
+import kotlinx.coroutines.withContext
 
 class ProfileFragment : Fragment() {
     private var currentUri: Uri? = null
