@@ -27,7 +27,7 @@ class RegisterFragment : Fragment() {
         binding = FragmentRegisterBinding.inflate(layoutInflater)
         initRegister()
         binding.registerBtn.setOnClickListener {
-            viewModel.registerUser(
+            viewModel.registerFarmer(
                 binding.nameLayout.editText?.text.toString(),
                 binding.emailLayout.editText?.text.toString(),
                 binding.locationLayout.editText?.text.toString(),

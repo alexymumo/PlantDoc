@@ -8,6 +8,7 @@ import androidx.fragment.app.Fragment
 import com.alexmumo.plantdoc.databinding.FragmentDashboardBinding
 
 class DashboardFragment : Fragment() {
+
     private lateinit var binding: FragmentDashboardBinding
     override fun onCreateView(
         inflater: LayoutInflater,

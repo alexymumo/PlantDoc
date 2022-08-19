@@ -21,9 +21,10 @@
         <action
             android:id="@+id/action_homeFragment_to_aboutFragment"
             app:destination="@id/aboutFragment" />
+
         <action
-            android:id="@+id/action_homeFragment_to_machineActivity"
-            app:destination="@id/machineActivity" />
+            android:id="@+id/action_homeFragment_to_classifierActivity"
+            app:destination="@id/classifierActivity" />
     </fragment>
     <fragment
         android:id="@+id/loginFragment"
@@ -83,8 +84,8 @@
             app:destination="@id/loginFragment" />
     </fragment>
     <activity
-        android:id="@+id/machineActivity"
-        android:name="com.alexmumo.plantdoc.MachineActivity"
-        android:label="activity_machine"
-        tools:layout="@layout/activity_machine" />
+        android:id="@+id/classifierActivity"
+        android:name="com.alexmumo.plantdoc.ui.activity.ClassifierActivity"
+        android:label="activity_classifier"
+        tools:layout="@layout/activity_classifier" />
 </navigation>

@@ -1,4 +1,4 @@
-package com.alexmumo.plantdoc
+package com.alexmumo.plantdoc.ml
 
 import android.content.res.AssetManager
 import android.graphics.Bitmap
@@ -50,7 +50,7 @@ class Classifier(assetManager: AssetManager, modelPath: String, labelPath: Strin
         val declaredLength = fileDescriptor.declaredLength
         return fileChannel.map(FileChannel.MapMode.READ_ONLY, startOffset, declaredLength)
     }
-    fun recognizeImage(bitmap: Bitmap): List<Classifier.Recognition> {
+    fun recognizeImage(bitmap: Bitmap): List<Recognition> {
         val scaledBitmap = Bitmap.createScaledBitmap(bitmap, INPUT_SIZE, INPUT_SIZE, false)
         val byteBuffer = convertBitmapToByteBuffer(scaledBitmap)
         val result = Array(1) { FloatArray(LABEL_LIST.size) }
@@ -77,7 +77,7 @@ class Classifier(assetManager: AssetManager, modelPath: String, labelPath: Strin
         return byteBuffer
     }
 
-    private fun getSortedResult(labelProbArray: Array<FloatArray>): List<Classifier.Recognition> {
+    private fun getSortedResult(labelProbArray: Array<FloatArray>): List<Recognition> {
         Log.d("Classifier", "List Size:(%d, %d, %d)".format(labelProbArray.size, labelProbArray[0].size, LABEL_LIST.size))
 
         val pq = PriorityQueue(
@@ -93,7 +93,7 @@ class Classifier(assetManager: AssetManager, modelPath: String, labelPath: Strin
             val confidence = labelProbArray[0][i]
             if (confidence >= THRESHOLD) {
                 pq.add(
-                    Classifier.Recognition(
+                    Recognition(
                         "" + i,
                         if (LABEL_LIST.size > i) LABEL_LIST[i] else "Unknown", confidence
                     )
@@ -102,7 +102,7 @@ class Classifier(assetManager: AssetManager, modelPath: String, labelPath: Strin
         }
         Log.d("Classifier", "pqsize:(%d)".format(pq.size))
 
-        val recognitions = ArrayList<Classifier.Recognition>()
+        val recognitions = ArrayList<Recognition>()
         val recognitionsSize = Math.min(pq.size, MAX_RESULTS)
         for (i in 0 until recognitionsSize) {
             pq.poll()?.let { recognitions.add(it) }
