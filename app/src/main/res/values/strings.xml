@@ -22,9 +22,21 @@
     <string name="forgot_password">Forgot Password?</string>
     <string name="farmers">Farmers</string>
     <string name="splash">splash</string>
-    <string name="fab1">fab1</string>
     <string name="camera">Camera</string>
     <string name="gallery">Gallery</string>
     <string name="image">image</string>
     <string name="predict">predict</string>
+
+    <!--Slides-->
+    <string name="first_slide">Plant Doc</string>
+    <string name="second_slide">Scan Leaf</string>
+    <string name="third_slide">Upload Image</string>
+
+    <!--Buttons-->
+    <string name="skipbtn">Skip</string>
+    <string name="nextbtn">Next</string>
+    <string name="get_started">Lets Get Started</string>
+
+    <!--Description-->
+
 </resources>
