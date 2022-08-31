@@ -48,7 +48,7 @@ android {
 dependencies {
     // Core
     implementation 'androidx.core:core-ktx:1.8.0'
-    implementation 'androidx.appcompat:appcompat:1.4.2'
+    implementation 'androidx.appcompat:appcompat:1.5.0'
 
     // Material
     implementation 'com.google.android.material:material:1.6.1'
@@ -82,6 +82,7 @@ dependencies {
     // Hilt
     implementation "com.google.dagger:hilt-android:2.41"
     kapt "com.google.dagger:hilt-compiler:$hilt_version"
+
 
     // ViewPager
     implementation "androidx.viewpager2:viewpager2:1.0.0"

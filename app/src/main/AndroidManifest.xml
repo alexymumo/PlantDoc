@@ -16,10 +16,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.PlantDoc"
         tools:targetApi="31">
-        <activity
-            android:name=".ui.activity.OnboardingActivity"
-            android:theme="@style/Theme.Design.NoActionBar"
-            android:exported="false" />
+
         <activity
             android:name=".ui.activity.ClassifierActivity"
             android:theme="@style/Theme.Design.NoActionBar"
