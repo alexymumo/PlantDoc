@@ -35,7 +35,7 @@ class RegisterFragment : Fragment() {
             )
         }
         binding.signinTv.setOnClickListener {
-            findNavController().navigate(R.id.registerFragment)
+            findNavController().navigate(R.id.loginFragment)
         }
         return binding.root
     }

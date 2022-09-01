@@ -20,17 +20,27 @@ class AuthViewModel @Inject constructor(
     private val authRepository: AuthRepository,
     private val dispatcher: CoroutineDispatcher = Dispatchers.Main
 ) : ViewModel() {
+
+    // Sign up livedata
     private val _signup = MutableLiveData<Event<Resource<AuthResult>>>()
     val register: LiveData<Event<Resource<AuthResult>>> = _signup
 
+    // login livedata
     private val _login = MutableLiveData<Event<Resource<AuthResult>>>()
     val login: LiveData<Event<Resource<AuthResult>>> = _login
 
+    /*
+    * register function with name, email, phone, password
+    * */
     fun registerFarmer(fullname: String, email: String, phone: String, password: String) {
         val error = if (fullname.isEmpty() || email.isEmpty() || password.isEmpty() || password.isEmpty()) {
             "Cannot be Empty"
         } else if (!Patterns.EMAIL_ADDRESS.matcher(email).matches()) {
             "Not Valid"
+        } else if (password.length < 6) {
+            "Password cannot be less than six"
+        } else if (phone.length < 10) {
+            "Phone cannot be less than ten"
         } else null
         error?.let {
             _signup.postValue(Event(Resource.Error(it)))
@@ -42,6 +52,10 @@ class AuthViewModel @Inject constructor(
             _signup.postValue(Event(register))
         }
     }
+
+    /*
+    * login function with email and password parameters
+    * */
     fun signInUser(email: String, password: String) {
         if (email.isEmpty() || password.isEmpty()) {
             _login.postValue(Event(Resource.Error("Cannot be empty")))

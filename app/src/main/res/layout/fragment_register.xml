@@ -5,12 +5,14 @@
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".ui.fragments.auth.RegisterFragment">
+
     <TextView
-        android:text="@string/sign_up"
+        android:text="Getting Started"
         android:textSize="40sp"
         android:textStyle="bold"
-        android:gravity="center_horizontal"
-        android:layout_marginTop="75dp"
+        android:gravity="start"
+        android:layout_marginStart="25dp"
+        android:layout_marginTop="40dp"
         android:textColor="@color/green"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"/>
@@ -93,7 +95,7 @@
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/location_text"
                     android:maxLines="1"
-                    android:inputType="textPassword"
+                    android:inputType="text"
                     android:textSize="18sp"
                     android:hint="@string/location"
                     android:layout_width="match_parent"
