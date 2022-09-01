@@ -29,11 +29,12 @@ class AuthViewModel @Inject constructor(
     private val _login = MutableLiveData<Event<Resource<AuthResult>>>()
     val login: LiveData<Event<Resource<AuthResult>>> = _login
 
-    /*
+    private val _forgot = MutableLiveData<Event<Resource<Any>>>()
+    val forgot: LiveData<Event<Resource<Any>>> = _forgot /*
     * register function with name, email, phone, password
     * */
     fun registerFarmer(fullname: String, email: String, phone: String, password: String) {
-        val error = if (fullname.isEmpty() || email.isEmpty() || password.isEmpty() || password.isEmpty()) {
+        val error = if (fullname.isEmpty() || email.isEmpty() || phone.isEmpty() || password.isEmpty()) {
             "Cannot be Empty"
         } else if (!Patterns.EMAIL_ADDRESS.matcher(email).matches()) {
             "Not Valid"
@@ -64,6 +65,17 @@ class AuthViewModel @Inject constructor(
             viewModelScope.launch {
                 val result = authRepository.signInFarmer(email, password)
                 _login.postValue(Event(result))
+            }
+        }
+    }
+    fun forgotPassword(email: String) {
+        if (email.isEmpty()) {
+            _forgot.postValue(Event(Resource.Error("Cannot be empty")))
+        } else {
+            _forgot.postValue(Event(Resource.Loading()))
+            viewModelScope.launch {
+                val result = authRepository.forgotPassword(email)
+                _forgot.postValue(Event(result))
             }
         }
     }

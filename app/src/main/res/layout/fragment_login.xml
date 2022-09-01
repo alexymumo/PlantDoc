@@ -7,18 +7,19 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".ui.fragments.auth.LoginFragment">
     <TextView
-        android:text="@string/login"
+        android:text="Welcome Back"
         android:textSize="40sp"
         android:textStyle="bold"
-        android:gravity="center_horizontal"
-        android:layout_marginTop="100dp"
+        android:gravity="start"
+        android:layout_marginStart="25dp"
+        android:layout_marginTop="40dp"
         android:textColor="@color/green"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"/>
 
     <com.google.android.material.card.MaterialCardView
         android:id="@+id/login_card"
-        android:layout_marginTop="30dp"
+        android:layout_marginTop="60dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="25dp"
@@ -81,6 +82,7 @@
             </com.google.android.material.textfield.TextInputLayout>
         </androidx.constraintlayout.widget.ConstraintLayout>
     </com.google.android.material.card.MaterialCardView>
+
     <TextView
         android:id="@+id/forgot_password"
         android:layout_marginTop="10dp"
@@ -96,6 +98,8 @@
         android:layout_marginTop="10dp"
         android:backgroundTint="@color/green"
         android:text="@string/sign_in"
+        android:textStyle="normal"
+        android:textAllCaps="false"
         android:layout_marginEnd="25dp"
         android:layout_marginStart="25dp"
         android:layout_height="wrap_content"/>

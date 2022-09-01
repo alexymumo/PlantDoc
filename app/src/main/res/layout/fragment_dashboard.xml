@@ -1,15 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical"
-    tools:context=".ui.fragments.auth.DashboardFragment">
+    android:layout_height="match_parent">
 
+    <ImageView
+        android:src="@drawable/img"
+        android:scaleType="fitXY"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
 
     <Button
-        android:id="@+id/btn_register"
+        android:id="@+id/register_btn"
         android:layout_width="match_parent"
+        android:layout_marginBottom="10dp"
+        android:textAllCaps="false"
         android:text="@string/register"
         android:backgroundTint="@color/green"
         android:layout_marginEnd="25dp"
@@ -17,12 +22,14 @@
         android:layout_height="wrap_content"/>
 
     <Button
-        android:id="@+id/btn_login"
+        android:id="@+id/login_btn"
         android:layout_width="match_parent"
-        android:layout_marginTop="10dp"
+        android:layout_marginTop="60dp"
         android:backgroundTint="@color/green"
         android:text="@string/sign_in"
+        android:textStyle="normal"
+        android:textAllCaps="false"
         android:layout_marginEnd="25dp"
         android:layout_marginStart="25dp"
         android:layout_height="wrap_content"/>
-</LinearLayout>
+</FrameLayout>
