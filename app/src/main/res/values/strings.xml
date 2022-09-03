@@ -36,6 +36,8 @@
     <string name="skipbtn">Skip</string>
     <string name="nextbtn">Next</string>
     <string name="get_started">Lets Get Started</string>
+    <string name="getting_started">Getting Started</string>
+    <string name="remember_me">Remember me</string>
 
     <!--Description-->
 
