@@ -39,9 +39,10 @@
                 android:layout_height="match_parent">
                 <TextView
                     android:id="@+id/tvDetectable"
-                    android:text="Detectable Diseases"
+                    android:text="@string/detectable_diseases"
                     android:textSize="16sp"
                     android:textStyle="bold"
+                    android:textAllCaps="false"
                     android:layout_marginStart="16dp"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -52,7 +53,7 @@
                     android:id="@+id/tvDiseases"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="4"
+                    android:text="@string/_4"
                     android:textSize="14sp"
                     android:textStyle="bold"
                     android:layout_marginStart="16dp"
@@ -63,14 +64,11 @@
                     android:id="@+id/healthy"
                     android:layout_width="50dp"
                     android:layout_height="50dp"
-                    android:layout_marginEnd="16dp"
+                    android:layout_margin="16dp"
                     android:src="@drawable/maize"
-                    android:layout_marginTop="10dp"
-                    app:layout_goneMarginEnd="10dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
-
-
             </androidx.constraintlayout.widget.ConstraintLayout>
         </androidx.cardview.widget.CardView>
 

@@ -19,7 +19,7 @@
                 android:id="@+id/profileImage"
                 android:layout_width="50dp"
                 android:layout_height="50dp"
-                android:layout_marginStart="30dp"
+                android:layout_marginStart="16dp"
                 android:layout_marginTop="15dp"
                 android:layout_marginBottom="15dp"
                 android:src="@drawable/maize"
@@ -33,7 +33,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="8dp"
                 android:textSize="16sp"
-                android:text="Hello ,"
+                android:text=""
                 android:textStyle="bold"
                 app:layout_constraintStart_toEndOf="@+id/profileImage"
                 app:layout_constraintTop_toTopOf="@+id/profileImage"/>
