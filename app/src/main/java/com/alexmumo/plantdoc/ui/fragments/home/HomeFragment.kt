@@ -35,7 +35,6 @@ class HomeFragment : Fragment() {
         circularImage.setOnClickListener {
             findNavController().navigate(R.id.profileFragment)
         }
-
         subscribeToObservers()
         return view
     }
@@ -55,4 +54,3 @@ class HomeFragment : Fragment() {
     }
 }
 
-//.substring(0, user.name.indexOf(' '))

@@ -12,6 +12,7 @@
 
     <item
         android:id="@+id/classifierActivity"
+        android:icon="@drawable/ic_add"
         android:title=""/>
 
     <item

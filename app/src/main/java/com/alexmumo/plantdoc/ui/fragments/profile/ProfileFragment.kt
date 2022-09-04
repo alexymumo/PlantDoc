@@ -21,9 +21,11 @@ class ProfileFragment : Fragment() {
     private var currentUri: Uri? = null
     private val userViewModel: UserViewModel by viewModels()
     private lateinit var binding: FragmentProfileBinding
-    private val pickerContent = registerForActivityResult(ActivityResultContracts.GetContent()) { uri ->
-        currentUri = uri
-    }
+    private val pickerContent =
+        registerForActivityResult(ActivityResultContracts.GetContent()) { uri ->
+            currentUri = uri
+        }
+
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
@@ -44,14 +46,16 @@ class ProfileFragment : Fragment() {
                 onLoading = {
                 }
             ) { user ->
-                binding.profileEmail.text = "${user.email}"
-                binding.profileUsername.text = "${user.name}"
+                //binding.profileEmail.text = "${user.email}"
+                //binding.profileUsername.text = "${user.name}"
             }
         )
     }
 
     private fun initializerListeners() {
-        binding.profileImage.setOnClickListener {
+
+
+        /* binding.profileImage.setOnClickListener {
             pickerContent.launch("image/*")
         }
         binding.tvlogout.setOnClickListener {
@@ -70,7 +74,7 @@ class ProfileFragment : Fragment() {
         }
         binding.tvAboutUs.setOnClickListener {
             findNavController().navigate(R.id.aboutFragment)
-        }
+        }*/
     }
 
     override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
@@ -79,5 +83,9 @@ class ProfileFragment : Fragment() {
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         return super.onOptionsItemSelected(item)
+    }
+}
+
+        */
     }
 }

@@ -8,9 +8,10 @@ import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import com.alexmumo.plantdoc.R
 import com.alexmumo.plantdoc.databinding.FragmentDashboardBinding
+import com.google.firebase.auth.FirebaseAuth
 
 class DashboardFragment : Fragment() {
-
+    private val firebaseAuth = FirebaseAuth.getInstance()
     private lateinit var binding: FragmentDashboardBinding
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -18,6 +19,14 @@ class DashboardFragment : Fragment() {
         savedInstanceState: Bundle?,
     ): View {
         binding = FragmentDashboardBinding.inflate(layoutInflater, container, false)
+        val user = FirebaseAuth.getInstance().currentUser
+        if (user != null) {
+            // user is signed
+            findNavController().navigate(R.id.homeFragment)
+        } else {
+            findNavController().navigate(R.id.loginFragment)
+            // user is not signed
+        }
         setListeners()
         return binding.root
     }
