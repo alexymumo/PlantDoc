@@ -25,6 +25,9 @@
         <action
             android:id="@+id/action_homeFragment_to_classifierActivity"
             app:destination="@id/classifierActivity" />
+        <action
+            android:id="@+id/action_homeFragment_to_selectFragment"
+            app:destination="@id/selectFragment" />
     </fragment>
     <fragment
         android:id="@+id/loginFragment"
@@ -64,7 +67,7 @@
     <fragment
         android:id="@+id/aboutFragment"
         android:name="com.alexmumo.plantdoc.ui.fragments.others.AboutFragment"
-        android:label="About"
+        android:label="About Us"
         tools:layout="@layout/fragment_about" />
     <fragment
         android:id="@+id/forgotPassword"
@@ -78,7 +81,6 @@
     <fragment
         android:id="@+id/dashboardFragment"
         android:name="com.alexmumo.plantdoc.ui.fragments.auth.DashboardFragment"
-        android:label="fragment_dashboard"
         tools:layout="@layout/fragment_dashboard" >
         <action
             android:id="@+id/action_dashboardFragment_to_registerFragment"
@@ -92,4 +94,9 @@
         android:name="com.alexmumo.plantdoc.ui.activity.ClassifierActivity"
         android:label="activity_classifier"
         tools:layout="@layout/activity_classifier" />
+    <fragment
+        android:id="@+id/selectFragment"
+        android:name="com.alexmumo.plantdoc.ui.fragments.others.SelectFragment"
+        android:label="Select"
+        tools:layout="@layout/fragment_select" />
 </navigation>

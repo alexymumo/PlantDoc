@@ -5,6 +5,7 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ImageView
 import android.widget.TextView
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
@@ -22,6 +23,7 @@ class HomeFragment : Fragment() {
     private lateinit var binding: FragmentHomeBinding
     private lateinit var circularImage: CircleImageView
     private lateinit var username: TextView
+    private lateinit var notificationImage: ImageView
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
@@ -31,6 +33,7 @@ class HomeFragment : Fragment() {
         val view = binding.root
         username = view.findViewById(R.id.tvUsername)
         circularImage = view.findViewById(R.id.profileImage)
+        notificationImage = view.findViewById(R.id.notificationImage)
 
         circularImage.setOnClickListener {
             findNavController().navigate(R.id.profileFragment)

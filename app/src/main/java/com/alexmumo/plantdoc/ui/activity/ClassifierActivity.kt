@@ -23,8 +23,8 @@ class ClassifierActivity : AppCompatActivity() {
     private lateinit var classifier: Classifier
     private lateinit var binding: ActivityClassifierBinding
 
-    private val cameraRequestCode = 0
-    private val galleryRequestCode = 4
+    private val cameraRequestCode = 23
+    private val galleryRequestCode = 0
 
     private val inputSize = 224
     private val modelPath = "maize.tflite"
@@ -63,7 +63,7 @@ class ClassifierActivity : AppCompatActivity() {
     @SuppressLint("SetTextI18n")
     @Deprecated("Deprecated in Java")
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
-        // super.onActivityResult(requestCode, resultCode, data)
+        super.onActivityResult(requestCode, resultCode, data)
         if (requestCode == cameraRequestCode) {
             if (requestCode == Activity.RESULT_OK && data != null) {
                 bitmap = data.extras!!.get("data") as Bitmap
@@ -72,9 +72,9 @@ class ClassifierActivity : AppCompatActivity() {
                 toast.setGravity(Gravity.BOTTOM, 0, 20)
                 toast.show()
                 binding.imageView.setImageBitmap(bitmap)
-                val output = classifier.recognizeImage(scaleImage(bitmap)).firstOrNull()
-                binding.tvResults.text = output?.title
-                binding.tvResults.text = output?.confidence.toString()
+                // val output = classifier.recognizeImage(scaleImage(bitmap)).firstOrNull()
+                // binding.tvResults.text = output?.title
+                // binding.tvResults.text = output?.confidence.toString()
             }
         } else if (requestCode == galleryRequestCode) {
             if (data != null) {

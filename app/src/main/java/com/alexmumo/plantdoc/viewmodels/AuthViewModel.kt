@@ -8,10 +8,13 @@ import androidx.lifecycle.viewModelScope
 import com.alexmumo.plantdoc.data.repository.AuthRepository
 import com.alexmumo.plantdoc.util.Event
 import com.alexmumo.plantdoc.util.Resource
+import com.alexmumo.plantdoc.util.Response
 import com.google.firebase.auth.AuthResult
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.CoroutineDispatcher
 import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.flow.MutableStateFlow
+import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.launch
 import javax.inject.Inject
 
@@ -20,7 +23,6 @@ class AuthViewModel @Inject constructor(
     private val authRepository: AuthRepository,
     private val dispatcher: CoroutineDispatcher = Dispatchers.Main
 ) : ViewModel() {
-
     // Sign up livedata
     private val _signup = MutableLiveData<Event<Resource<AuthResult>>>()
     val register: LiveData<Event<Resource<AuthResult>>> = _signup
@@ -48,7 +50,7 @@ class AuthViewModel @Inject constructor(
             return
         }
         _signup.postValue(Event(Resource.Loading()))
-        viewModelScope.launch {
+        viewModelScope.launch(Dispatchers.Main) {
             val register = authRepository.registerFarmer(fullname, email, phone, password)
             _signup.postValue(Event(register))
         }
@@ -62,18 +64,22 @@ class AuthViewModel @Inject constructor(
             _login.postValue(Event(Resource.Error("Cannot be empty")))
         } else {
             _login.postValue(Event(Resource.Loading()))
-            viewModelScope.launch {
+            viewModelScope.launch(Dispatchers.Main) {
                 val result = authRepository.signInFarmer(email, password)
                 _login.postValue(Event(result))
             }
         }
     }
+
+    /*
+    * forgot password function
+    * */
     fun forgotPassword(email: String) {
         if (email.isEmpty()) {
             _forgot.postValue(Event(Resource.Error("Cannot be empty")))
         } else {
             _forgot.postValue(Event(Resource.Loading()))
-            viewModelScope.launch {
+            viewModelScope.launch(Dispatchers.Main) {
                 val result = authRepository.forgotPassword(email)
                 _forgot.postValue(Event(result))
             }

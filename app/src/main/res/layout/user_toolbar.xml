@@ -6,12 +6,13 @@
     android:layout_height="match_parent">
 
     <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/appBarLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@color/white">
 
         <androidx.constraintlayout.widget.ConstraintLayout
-            android:padding="5dp"
+            android:padding="15dp"
             android:layout_width="match_parent"
             android:layout_height="match_parent">
 
@@ -33,7 +34,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="8dp"
                 android:textSize="16sp"
-                android:text=""
+                android:text="Hello,"
                 android:textStyle="bold"
                 app:layout_constraintStart_toEndOf="@+id/profileImage"
                 app:layout_constraintTop_toTopOf="@+id/profileImage"/>
@@ -48,6 +49,15 @@
                 android:textStyle="bold"
                 app:layout_constraintStart_toStartOf="@+id/tvUsername"
                 app:layout_constraintTop_toBottomOf="@+id/tvUsername"/>
+
+            <ImageView
+                android:id="@+id/notificationImage"
+                android:layout_width="wrap_content"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginEnd="16dp"
+                android:src="@drawable/ic_notifications"
+                app:layout_constraintBottom_toBottomOf="@+id/tvUsername"
+                android:layout_height="wrap_content"/>
 
         </androidx.constraintlayout.widget.ConstraintLayout>
     </com.google.android.material.appbar.AppBarLayout>

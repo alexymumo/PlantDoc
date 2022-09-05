@@ -1,20 +1,15 @@
 package com.alexmumo.plantdoc.ui.activity
 
-import android.content.DialogInterface
-import android.content.Intent
 import android.os.Bundle
-import android.provider.MediaStore
-import android.view.MenuItem
 import android.view.View
-import android.widget.Toast
-import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.splashscreen.SplashScreen.Companion.installSplashScreen
-import androidx.navigation.NavController
 import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.ui.setupWithNavController
 import com.alexmumo.plantdoc.R
 import com.alexmumo.plantdoc.databinding.ActivityMainBinding
+import com.alexmumo.plantdoc.ui.fragments.others.SelectFragment
+import com.google.android.material.navigation.NavigationBarView
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
@@ -29,9 +24,25 @@ class MainActivity : AppCompatActivity() {
         val navHostFragment = supportFragmentManager.findFragmentById(R.id.nav_host) as NavHostFragment
         val navController = navHostFragment.navController
         binding.bottomNav.setupWithNavController(navController)
+
+        NavigationBarView.OnItemSelectedListener { item ->
+            when (item.itemId) {
+                R.id.selectFragment -> {
+                    val dialog = SelectFragment()
+                    dialog.show(supportFragmentManager, "custom")
+                    true
+                }
+                else -> false
+            }
+        }
+
         navController.addOnDestinationChangedListener { _, destination, _ ->
             if (destination.id == R.id.loginFragment || destination.id == R.id.registerFragment || destination.id == R.id.dashboardFragment) {
                 binding.bottomNav.visibility = View.GONE
+            } else if (destination.id == R.id.selectFragment) {
+                binding.bottomNav.visibility = View.GONE
+                // val dialog = SelectFragment()
+                // dialog.show(supportFragmentManager, "custom")
             } else {
                 binding.bottomNav.visibility = View.VISIBLE
             }
@@ -147,4 +158,3 @@ navController.addOnDestinationChangedListener { _, destination, _ ->
 }
 
  */
-
