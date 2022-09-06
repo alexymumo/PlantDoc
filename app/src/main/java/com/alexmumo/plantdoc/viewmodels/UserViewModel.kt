@@ -9,11 +9,13 @@ import com.alexmumo.plantdoc.data.entity.User
 import com.alexmumo.plantdoc.data.repository.UserRepository
 import com.alexmumo.plantdoc.util.Event
 import com.alexmumo.plantdoc.util.Resource
+import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.CoroutineDispatcher
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import javax.inject.Inject
 
+@HiltViewModel
 class UserViewModel @Inject constructor(
     private val userRepository: UserRepository,
     private val dispatcher: CoroutineDispatcher = Dispatchers.Main
