@@ -98,14 +98,5 @@ class MapsFragment : Fragment(), OnMapReadyCallback {
     }
 }
 
-/*
-ActivityCompat.requestPermissions(
-requireActivity(),
-arrayOf(
-Manifest.permission.ACCESS_FINE_LOCATION,
-Manifest.permission.ACCESS_COARSE_LOCATION
-),
-REQUEST_PERMISSION_CODE
-)
 
- */
+

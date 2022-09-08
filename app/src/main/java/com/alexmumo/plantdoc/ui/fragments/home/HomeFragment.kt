@@ -38,6 +38,9 @@ class HomeFragment : Fragment() {
         circularImage.setOnClickListener {
             findNavController().navigate(R.id.profileFragment)
         }
+        notificationImage.setOnClickListener {
+            findNavController().navigate(R.id.notificationFragment)
+        }
         subscribeToObservers()
         return view
     }
@@ -56,4 +59,3 @@ class HomeFragment : Fragment() {
         )
     }
 }
-

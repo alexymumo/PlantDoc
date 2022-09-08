@@ -38,10 +38,12 @@ class Classifier(assetManager: AssetManager, modelPath: String, labelPath: Strin
         LABEL_LIST = loadLabelList(assetManager, labelPath)
     }
 
+    // load the labels
     private fun loadLabelList(assetManager: AssetManager, labelPath: String): List<String> {
         return assetManager.open(labelPath).bufferedReader().useLines { it.toList() }
     }
 
+    // load the model
     private fun loadModelFile(assetManager: AssetManager, modelPath: String): MappedByteBuffer {
         val fileDescriptor = assetManager.openFd(modelPath)
         val inputStream = FileInputStream(fileDescriptor.fileDescriptor)
