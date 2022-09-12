@@ -8,10 +8,10 @@
     <item
         android:title="@string/location"
         android:icon="@drawable/ic_location"
-        android:id="@+id/farmersList"/>
+        android:id="@+id/mapsFragment"/>
 
     <item
-        android:id="@+id/classifierActivity"
+        android:id="@+id/selectFragment"
         android:icon="@drawable/ic_add"
         android:title=""/>
 

@@ -1,10 +1,8 @@
 package com.alexmumo.plantdoc.ui.activity
 
-import android.Manifest
 import android.annotation.SuppressLint
 import android.app.Activity
 import android.content.Intent
-import android.content.pm.ActivityInfo
 import android.graphics.Bitmap
 import android.graphics.BitmapFactory
 import android.graphics.Matrix
@@ -19,6 +17,7 @@ import com.alexmumo.plantdoc.databinding.ActivityClassifierBinding
 import com.alexmumo.plantdoc.ml.Classifier
 import java.io.IOException
 
+@Suppress("DEPRECATION")
 class ClassifierActivity : AppCompatActivity() {
     private lateinit var bitmap: Bitmap
     private lateinit var classifier: Classifier
