@@ -75,10 +75,29 @@
         </androidx.cardview.widget.CardView>
 
         <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_marginStart="15dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/cardview">
+
+            <TextView
+                android:text="Supported Diseases"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="20sp"
+                android:textColor="@color/green"
+                android:textAllCaps="true"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"/>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
             app:layout_constraintTop_toBottomOf="@+id/cardview"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
+            android:layout_marginTop="50dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="parent">
 
@@ -165,7 +184,7 @@
                         android:src="@drawable/img"
                         android:layout_width="60dp"
                         android:layout_height="60dp"
-                        android:layout_marginTop="20dp"
+                        android:layout_marginTop="18dp"
                         android:layout_marginStart="20dp"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toBottomOf="@+id/tvSmut"/>
@@ -177,7 +196,7 @@
                         app:layout_constraintTop_toBottomOf="@+id/image4"
                         android:text="Leaf Bright"
                         android:layout_marginStart="20dp"
-                        android:layout_marginTop="10dp"/>
+                        android:layout_marginTop="5dp"/>
 
 
 
@@ -186,11 +205,21 @@
                         android:src="@drawable/img"
                         android:layout_width="60dp"
                         android:layout_height="60dp"
-                        android:layout_marginTop="20dp"
+                        android:layout_marginTop="18dp"
                         android:layout_marginStart="40dp"
-                        app:layout_constraintTop_toBottomOf="@+id/image2"
+                        app:layout_constraintTop_toBottomOf="@+id/tvSmut"
                         app:layout_constraintStart_toEndOf="@+id/image4"
                         android:contentDescription="@string/image"/>
+
+                    <TextView
+                        android:id="@+id/tv5"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="20dp"
+                        android:text="Healthy"
+                        android:layout_marginTop="5dp"
+                        app:layout_constraintStart_toEndOf="@+id/tv4"
+                        app:layout_constraintTop_toBottomOf="@+id/image5"/>
 
                 </androidx.constraintlayout.widget.ConstraintLayout>
             </com.google.android.material.card.MaterialCardView>
