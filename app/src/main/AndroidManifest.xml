@@ -3,7 +3,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     package="com.alexmumo.plantdoc">
     <!-- Access internet and location -->
-    <uses-feature android:name="android.hardware.camera"/>
+    <uses-feature android:name="android.hardware.camera" />
+
     <uses-permission android:name="android.permission.CAMERA" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.INTERNET" />
@@ -22,12 +23,12 @@
         android:theme="@style/Theme.PlantDoc"
         tools:targetApi="31">
         <activity
-            android:name=".AnotherActivity"
+            android:name=".ClassifierJava"
             android:exported="false" />
         <activity
             android:name=".ui.activity.ClassifierActivity"
             android:exported="false"
-            android:theme="@style/Theme.Design.NoActionBar" />
+            android:theme="@style/Theme.PlantDoc" />
 
         <meta-data
             android:name="com.google.android.geo.API_KEY"
@@ -36,7 +37,7 @@
         <activity
             android:name=".ui.activity.MainActivity"
             android:exported="true"
-            android:theme="@style/Theme.CustomSplashScreenTheme">
+            android:theme="@style/Theme.PlantDoc">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

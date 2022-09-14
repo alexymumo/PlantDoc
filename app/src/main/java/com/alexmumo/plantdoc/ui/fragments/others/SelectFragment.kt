@@ -24,7 +24,6 @@ import java.io.IOException
 import java.nio.ByteBuffer
 import java.nio.ByteOrder
 
-
 @Suppress("DEPRECATION")
 @AndroidEntryPoint
 class SelectFragment : Fragment() {
@@ -151,7 +150,7 @@ class SelectFragment : Fragment() {
                     maxPos = i
                 }
             }
-
+            // val classes = arrayOf("Gray Leaf Spot", "Healthy", "Common Smut", "Northern Leaf Blight")
             val classes = arrayOf("Gray Leaf Spot", "Healthy", "Maize Common Smut", "Maize Streak Virus", "Northern Leaf Blight")
             // classes[maxPos]
             binding.tvResults.text = classes[maxPos]

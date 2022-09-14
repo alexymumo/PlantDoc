@@ -1,15 +1,16 @@
 package com.alexmumo.plantdoc.ui.activity
 
+import android.Manifest
 import android.annotation.SuppressLint
 import android.app.Activity
 import android.content.Intent
+import android.content.pm.PackageManager
 import android.graphics.Bitmap
 import android.graphics.BitmapFactory
 import android.graphics.Matrix
 import android.os.Build
 import android.os.Bundle
 import android.provider.MediaStore
-import android.view.Gravity
 import android.widget.Toast
 import androidx.annotation.RequiresApi
 import androidx.appcompat.app.AppCompatActivity
@@ -45,8 +46,11 @@ class ClassifierActivity : AppCompatActivity() {
             binding.imageView.setImageBitmap(bitmap)
         }
         binding.camera.setOnClickListener {
-            val camera = Intent(MediaStore.ACTION_IMAGE_CAPTURE)
-            startActivityForResult(camera, cameraRequestCode)
+            if (hasPermission()) {
+                openCamera()
+            } else {
+                requestPermission()
+            }
         }
         binding.gallery.setOnClickListener {
             val intent = Intent(Intent.ACTION_PICK)
@@ -59,22 +63,45 @@ class ClassifierActivity : AppCompatActivity() {
         }
     }
 
+    private fun requestPermission() {
+        if (shouldShowRequestPermissionRationale(Manifest.permission.CAMERA)) {
+            Toast.makeText(this, "Camera Permission Required", Toast.LENGTH_LONG).show()
+        } else {
+            requestPermissions(arrayOf(Manifest.permission.CAMERA), cameraRequestCode)
+        }
+    }
+
+    private fun hasPermission(): Boolean {
+        return checkSelfPermission(Manifest.permission.CAMERA) == PackageManager.PERMISSION_GRANTED
+    }
+
+    private fun openCamera() {
+        val camera = Intent(MediaStore.ACTION_IMAGE_CAPTURE)
+        startActivityForResult(camera, cameraRequestCode)
+    }
+
     @SuppressLint("SetTextI18n")
     @Deprecated("Deprecated in Java")
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         // super.onActivityResult(requestCode, resultCode, data)
         if (requestCode == cameraRequestCode) {
-            if (requestCode == Activity.RESULT_OK && data != null) {
-                bitmap = data.extras!!.get("data") as Bitmap
-                bitmap = scaleImage(bitmap)
-                val toast = Toast.makeText(this, ("Image crop to: w= ${bitmap.width} h= ${bitmap.height}"), Toast.LENGTH_LONG)
-                toast.setGravity(Gravity.BOTTOM, 0, 20)
-                toast.show()
-                binding.imageView.setImageBitmap(bitmap)
-                val output = classifier.recognizeImage(scaleImage(bitmap)).firstOrNull()
-                binding.tvResults.text = output?.title
-                binding.tvResults.text = output?.confidence.toString()
-            }
+            val photo = data?.extras!!.get("data") as Bitmap
+            binding.imageView.setImageBitmap(photo)
+            val output = classifier.recognizeImage(scaleImage(photo)).firstOrNull()
+            binding.tvResults.text = output?.title
+            binding.tvResults.text = output?.confidence.toString()
+
+            /*if (requestCode == Activity.RESULT_OK && data != null) {
+                val photo = data.extras!!.get("data") as Bitmap
+                bitmap = scaleImage(photo)
+                // val toast = Toast.makeText(this, ("Image crop to: w= ${bitmap.width} h= ${bitmap.height}"), Toast.LENGTH_LONG)
+                // toast.setGravity(Gravity.BOTTOM, 0, 20)
+                // toast.show()
+                //binding.imageView.setImageBitmap(photo)
+                //val output = classifier.recognizeImage(scaleImage(photo)).firstOrNull()
+               // binding.tvResults.text = output?.title
+                //binding.tvResults.text = output?.confidence.toString()
+            }*/
         } else if (requestCode == galleryRequestCode) {
             if (data != null) {
                 val uri = data.data
@@ -92,8 +119,32 @@ class ClassifierActivity : AppCompatActivity() {
         super.onActivityResult(requestCode, resultCode, data)
     }
 
-    private fun scaleImage(bitmap: Bitmap?): Bitmap {
-        val originalWidth = bitmap!!.width
+    override fun onRequestPermissionsResult(
+        requestCode: Int,
+        permissions: Array<out String>,
+        grantResults: IntArray
+    ) {
+        super.onRequestPermissionsResult(requestCode, permissions, grantResults)
+        if (requestCode == cameraRequestCode) {
+            if (hasAllPermissions(grantResults)) {
+                openCamera()
+            } else {
+                requestPermission()
+            }
+        }
+    }
+
+    private fun hasAllPermissions(grantResults: IntArray): Boolean {
+        for (results in grantResults) {
+            if (results == PackageManager.PERMISSION_DENIED) {
+                return false
+            }
+        }
+        return true
+    }
+
+    private fun scaleImage(bitmap: Bitmap): Bitmap {
+        val originalWidth = bitmap.width
         val originHeight = bitmap.height
         val scaleWidth = inputSize.toFloat() / originalWidth
         val scaleHeight = inputSize.toFloat() / originHeight

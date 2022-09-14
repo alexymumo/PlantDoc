@@ -7,7 +7,6 @@
     tools:context=".ui.fragments.profile.ProfileFragment">
 
 
-
     <com.google.android.material.card.MaterialCardView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -22,13 +21,15 @@
             android:layout_height="match_parent"
             android:padding="10dp">
 
+
             <de.hdodenhof.circleimageview.CircleImageView
                 android:id="@+id/farmerProfile"
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                android:layout_width="50dp"
-                android:layout_height="50dp"/>
+                android:src="@drawable/image"
+                android:layout_width="80dp"
+                android:layout_height="80dp"/>
 
             <TextView
                 android:id="@+id/tvName"
@@ -36,11 +37,10 @@
                 android:textAllCaps="false"
                 android:textSize="16sp"
                 android:textColor="@color/black"
+                android:layout_marginTop="40dp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                app:layout_constraintBottom_toBottomOf="@+id/farmerProfile"
-                app:layout_constraintTop_toTopOf="@+id/farmerProfile"
-                app:layout_constraintStart_toEndOf="@+id/farmerProfile"
+                app:layout_constraintTop_toBottomOf="@+id/farmerProfile"
                 app:layout_constraintStart_toStartOf="parent"/>
 
             <TextView

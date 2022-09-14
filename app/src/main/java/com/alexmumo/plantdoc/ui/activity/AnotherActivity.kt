@@ -1,18 +1,9 @@
 package com.alexmumo.plantdoc.ui.activity
 
+/*
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.alexmumo.plantdoc.R
-
-class AnotherActivity : AppCompatActivity() {
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_another)
-    }
-}
-
-/*
-
 import android.annotation.SuppressLint
 import android.app.Activity
 import android.content.Intent
@@ -22,14 +13,13 @@ import android.content.res.AssetManager
 import android.graphics.Bitmap
 import android.graphics.BitmapFactory
 import android.graphics.Matrix
-import android.os.Bundle
 import android.provider.MediaStore
 import android.util.Log
 import android.widget.Toast
 import androidx.activity.result.ActivityResult
 import androidx.activity.result.contract.ActivityResultContracts
-import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
+import com.alexmumo.plantdoc.databinding.ActivityAnotherBinding
 import com.alexmumo.plantdoc.databinding.ActivityClassifierBinding
 import com.alexmumo.plantdoc.ml.Classifier
 import com.alexmumo.plantdoc.ml.Maize
@@ -45,12 +35,12 @@ import java.nio.channels.FileChannel
 import java.util.*
 import kotlin.Comparator
 import kotlin.collections.ArrayList
-/*
-class ClassifierActivity : AppCompatActivity() {
+
+
+class AnotherActivity : AppCompatActivity() {
     private lateinit var bitmap: Bitmap
     private lateinit var classifier: Classifier
-    private lateinit var binding: ActivityClassifierBinding
-
+    private lateinit var binding: ActivityAnotherBinding
     private val cameraRequestCode = 0
     private val galleryRequestCode = 2
 
@@ -125,7 +115,7 @@ class ClassifierActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         requestedOrientation = ActivityInfo.SCREEN_ORIENTATION_UNSPECIFIED
-        binding = ActivityClassifierBinding.inflate(layoutInflater)
+        binding = ActivityAnotherBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
         val takePicturePreview = registerForActivityResult(ActivityResultContracts.TakePicturePreview()) { bitmap ->
@@ -203,7 +193,7 @@ class ClassifierActivity : AppCompatActivity() {
         }
     }
 }
-/*
+
 class Classifier(assetManager: AssetManager, modelPath: String, labelPath: String, inputSize: Int) {
     private var INTERPRETER: Interpreter
     private var LABEL_LIST: List<String>
@@ -314,7 +304,7 @@ private fun scaleImage(bitmap: Bitmap?): Bitmap {
     matrix.postScale(scaleWidth, scaleHeight)
     return Bitmap.createBitmap(bitmap, 0, 0, originalWidth, originHeight, matrix, true)
 }
-
+*/
 
 
 /*
@@ -349,8 +339,4 @@ private fun scaleImage(bitmap: Bitmap?): Bitmap {
          Toast.makeText(this, "An error occurred", Toast.LENGTH_LONG).show()
      }
      super.onActivityResult(requestCode, resultCode, data)
- }
-
- */
-
- */
+ }*/*/

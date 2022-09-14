@@ -73,7 +73,7 @@
                     android:maxLines="1"
                     android:inputType="text"
                     android:textSize="18sp"
-                    android:hint="@string/name"
+                    android:hint="Full name"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"/>
             </com.google.android.material.textfield.TextInputLayout>
@@ -94,9 +94,9 @@
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/location_text"
                     android:maxLines="1"
-                    android:inputType="text"
+                    android:inputType="phone"
                     android:textSize="18sp"
-                    android:hint="@string/location"
+                    android:hint="Phone"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"/>
             </com.google.android.material.textfield.TextInputLayout>
@@ -140,6 +140,7 @@
         android:layout_marginStart="25dp"
         android:layout_height="wrap_content"/>
 
+
     <TextView
         android:layout_below="@+id/register_btn"
         android:gravity="center_horizontal"
@@ -153,9 +154,9 @@
 
     <ProgressBar
         android:id="@+id/progressBar"
+        android:layout_centerInParent="true"
         android:layout_below="@+id/signin_tv"
         style="?android:attr/progressBarStyle"
         android:layout_width="wrap_content"
-        android:visibility="gone"
         android:layout_height="wrap_content" />
 </RelativeLayout>

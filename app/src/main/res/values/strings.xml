@@ -36,13 +36,15 @@
     <string name="skipbtn">Skip</string>
     <string name="nextbtn">Next</string>
     <string name="get_started">Lets Get Started</string>
-    <string name="getting_started">Getting Started</string>
+    <string name="getting_started">Create Account</string>
     <string name="remember_me">Remember me</string>
     <string name="detectable_diseases">Detectable Diseases</string>
     <string name="_4">4</string>
     <string name="fab">fab</string>
     <string name="no_notification">No Notification</string>
     <string name="dash_image">dash_image</string>
+    <string name="previewimage">previewImage</string>
+    <string name="welcome_back">Welcome Back</string>
 
     <!--Description-->
 

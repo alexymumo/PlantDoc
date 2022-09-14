@@ -11,7 +11,7 @@
         android:id="@+id/mapsFragment"/>
 
     <item
-        android:id="@+id/selectFragment"
+        android:id="@+id/classifierActivity"
         android:icon="@drawable/ic_add"
         android:title=""/>
 
