@@ -8,6 +8,7 @@
 
 
     <com.google.android.material.card.MaterialCardView
+        android:id="@+id/materialCardView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:cardElevation="10dp"
@@ -56,7 +57,7 @@
             <TextView
                 android:id="@+id/tvLocation"
                 app:layout_constraintStart_toStartOf="parent"
-                android:text="Location"
+                android:text="Phone"
                 android:textSize="16sp"
                 android:textColor="@color/black"
                 android:layout_marginTop="10dp"
@@ -76,6 +77,24 @@
 
         </androidx.constraintlayout.widget.ConstraintLayout>
     </com.google.android.material.card.MaterialCardView>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/logOutCardView"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        app:cardElevation="10dp"
+        android:layout_centerInParent="true"
+        android:layout_margin="20dp"
+        app:cardCornerRadius="15dp"
+        android:layout_below="@+id/materialCardView">
+        <TextView
+            android:text="Log Out"
+            android:textColor="@color/black"
+            android:textStyle="bold"
+            android:layout_marginStart="16dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+    </androidx.cardview.widget.CardView>
 
 </RelativeLayout>
 

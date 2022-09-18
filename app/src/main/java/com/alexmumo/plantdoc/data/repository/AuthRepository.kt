@@ -4,10 +4,7 @@ import com.alexmumo.plantdoc.util.Resource
 import com.google.firebase.auth.AuthResult
 
 interface AuthRepository {
-    suspend fun registerFarmer(fullName: String, email: String, phone: String, password: String): Resource<AuthResult>
+    suspend fun registerFarmer(email: String, username: String, phone: String, password: String): Resource<AuthResult>
     suspend fun signInFarmer(email: String, password: String): Resource<AuthResult>
     suspend fun forgotPassword(email: String): Resource<Any>
 }
-
-
-

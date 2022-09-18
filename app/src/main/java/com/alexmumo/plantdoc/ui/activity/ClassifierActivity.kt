@@ -2,7 +2,6 @@ package com.alexmumo.plantdoc.ui.activity
 
 import android.Manifest
 import android.annotation.SuppressLint
-import android.app.Activity
 import android.content.Intent
 import android.content.pm.PackageManager
 import android.graphics.Bitmap
@@ -87,9 +86,9 @@ class ClassifierActivity : AppCompatActivity() {
         if (requestCode == cameraRequestCode) {
             val photo = data?.extras!!.get("data") as Bitmap
             binding.imageView.setImageBitmap(photo)
-            val output = classifier.recognizeImage(scaleImage(photo)).firstOrNull()
-            binding.tvResults.text = output?.title
-            binding.tvResults.text = output?.confidence.toString()
+            classifier.recognizeImage(scaleImage(photo)).firstOrNull()
+            // binding.tvResults.text = output?.title
+            // binding.tvResults.text = output?.confidence.toString()
 
             /*if (requestCode == Activity.RESULT_OK && data != null) {
                 val photo = data.extras!!.get("data") as Bitmap

@@ -34,9 +34,6 @@
         <action
             android:id="@+id/action_homeFragment_to_farmersList"
             app:destination="@id/farmersList" />
-        <action
-            android:id="@+id/action_homeFragment_to_classifierJava"
-            app:destination="@id/classifierJava" />
     </fragment>
     <fragment
         android:id="@+id/loginFragment"
@@ -118,9 +115,4 @@
         android:name="com.alexmumo.plantdoc.ui.fragments.list.FarmersList"
         android:label="fragment_farmers_list"
         tools:layout="@layout/fragment_farmers_list" />
-    <activity
-        android:id="@+id/classifierJava"
-        android:name="com.alexmumo.plantdoc.ui.activity.ClassifierJava"
-        android:label="activity_classifier_java"
-        tools:layout="@layout/activity_classifier_java" />
 </navigation>
