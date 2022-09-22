@@ -10,7 +10,6 @@ import android.view.ViewGroup
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
-import androidx.lifecycle.Observer
 import androidx.navigation.fragment.findNavController
 import com.alexmumo.plantdoc.R
 import com.alexmumo.plantdoc.databinding.FragmentProfileBinding
@@ -37,9 +36,10 @@ class ProfileFragment : Fragment() {
         binding = FragmentProfileBinding.inflate(inflater, container, false)
         initializerListeners()
         // subscribeToObservers()
-        subscribeToProfileObservers()
+        //subscribeToProfileObservers()
         return binding.root
     }
+    /*
 
     private fun subscribeToProfileObservers() {
         userViewModel.curlImageUri.observe(
@@ -49,7 +49,7 @@ class ProfileFragment : Fragment() {
                 // glide.load(currentUri).into(binding.farmerProfile)
             }
         )
-    }
+    }*/
 
     /*
     private fun subscribeToObservers() {

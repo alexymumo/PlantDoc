@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_graph"
-    app:startDestination="@id/homeFragment">
+    app:startDestination="@id/loginFragment">
     <fragment
         android:id="@+id/homeFragment"
         android:name="com.alexmumo.plantdoc.ui.fragments.home.HomeFragment"
@@ -34,6 +34,9 @@
         <action
             android:id="@+id/action_homeFragment_to_farmersList"
             app:destination="@id/farmersList" />
+        <action
+            android:id="@+id/action_homeFragment_to_adminFragment"
+            app:destination="@id/adminFragment" />
     </fragment>
     <fragment
         android:id="@+id/loginFragment"
@@ -115,4 +118,9 @@
         android:name="com.alexmumo.plantdoc.ui.fragments.list.FarmersList"
         android:label="fragment_farmers_list"
         tools:layout="@layout/fragment_farmers_list" />
+    <fragment
+        android:id="@+id/adminFragment"
+        android:name="com.alexmumo.plantdoc.ui.fragments.others.AdminFragment"
+        android:label="fragment_admin"
+        tools:layout="@layout/fragment_admin" />
 </navigation>

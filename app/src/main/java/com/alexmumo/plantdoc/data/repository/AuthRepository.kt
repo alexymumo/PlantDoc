@@ -8,3 +8,4 @@ interface AuthRepository {
     suspend fun signInFarmer(email: String, password: String): Resource<AuthResult>
     suspend fun forgotPassword(email: String): Resource<Any>
 }
+

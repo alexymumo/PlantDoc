@@ -97,7 +97,8 @@ class Classifier(assetManager: AssetManager, modelPath: String, labelPath: Strin
                 pq.add(
                     Recognition(
                         "" + i,
-                        if (LABEL_LIST.size > i) LABEL_LIST[i] else "Unknown", confidence
+                        if (LABEL_LIST.size > i) LABEL_LIST[i] else "Unknown",
+                        confidence
                     )
                 )
             }

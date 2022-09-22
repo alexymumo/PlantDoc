@@ -41,16 +41,18 @@ class HomeFragment : Fragment() {
         notificationImage.setOnClickListener {
             findNavController().navigate(R.id.notificationFragment)
         }
-        subscribeToObservers()
-        subscribeToListeners()
-        // subscribeToProfileObservers()
-        return view
-    }
-
-    private fun subscribeToListeners() {
         binding.cardViewScan.setOnClickListener {
             findNavController().navigate(R.id.classifierActivity)
         }
+        binding.cardViewAdmin.setOnClickListener {
+            findNavController().navigate(R.id.adminFragment)
+        }
+        binding.cardViewScan.setOnClickListener {
+            findNavController().navigate(R.id.classifierActivity)
+        }
+        subscribeToObservers()
+        // subscribeToProfileObservers()
+        return view
     }
 
     /* private fun subscribeToProfileObservers() {

@@ -4,10 +4,11 @@
         android:title="@string/home"
         android:icon="@drawable/ic_home"
         android:id="@+id/homeFragment"/>
+    <!--
     <item
         android:title="@string/location"
         android:icon="@drawable/ic_location"
-        android:id="@+id/mapsFragment"/>
+        android:id="@+id/mapsFragment"/>-->
     <!--
     <item
         android:id="@+id/classifierActivity"

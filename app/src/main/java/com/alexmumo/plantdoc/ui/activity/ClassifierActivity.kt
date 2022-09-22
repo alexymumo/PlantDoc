@@ -17,6 +17,7 @@ import com.alexmumo.plantdoc.databinding.ActivityClassifierBinding
 import com.alexmumo.plantdoc.ml.Classifier
 import java.io.IOException
 
+
 @Suppress("DEPRECATION")
 class ClassifierActivity : AppCompatActivity() {
     private lateinit var bitmap: Bitmap
