@@ -7,51 +7,53 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.activity.result.contract.ActivityResultContracts
+import androidx.activity.result.ActivityResultLauncher
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
+import androidx.lifecycle.Observer
 import androidx.navigation.fragment.findNavController
 import com.alexmumo.plantdoc.R
 import com.alexmumo.plantdoc.databinding.FragmentProfileBinding
+import com.alexmumo.plantdoc.util.EventObserver
 import com.alexmumo.plantdoc.viewmodels.UserViewModel
+import com.bumptech.glide.Glide
+import com.bumptech.glide.RequestManager
 import com.google.firebase.auth.FirebaseAuth
 import dagger.hilt.android.AndroidEntryPoint
+import javax.inject.Inject
 
 @AndroidEntryPoint
 class ProfileFragment : Fragment() {
     private var currentUri: Uri? = null
-    // @Inject lateinit var glide: RequestManager
+
+    @Inject
+    lateinit var glide: RequestManager
     private val userViewModel: UserViewModel by viewModels()
     private lateinit var binding: FragmentProfileBinding
-    private val pickerContent =
-        registerForActivityResult(ActivityResultContracts.GetContent()) { uri ->
-            currentUri = uri
-        }
+    private lateinit var cropContent: ActivityResultLauncher<String>
 
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
-        savedInstanceState: Bundle?,
+        savedInstanceState: Bundle?
     ): View {
         binding = FragmentProfileBinding.inflate(inflater, container, false)
         initializerListeners()
-        // subscribeToObservers()
-        //subscribeToProfileObservers()
+        subscribeToObservers()
+        subscribeToProfileObservers()
         return binding.root
     }
-    /*
 
     private fun subscribeToProfileObservers() {
         userViewModel.curlImageUri.observe(
             viewLifecycleOwner,
             Observer {
                 currentUri = it
-                // glide.load(currentUri).into(binding.farmerProfile)
+                glide.load(currentUri).into(binding.farmerProfile)
             }
         )
-    }*/
+    }
 
-    /*
     private fun subscribeToObservers() {
         userViewModel.user.observe(
             viewLifecycleOwner,
@@ -60,15 +62,13 @@ class ProfileFragment : Fragment() {
                 },
                 onLoading = {
                 }
-            ) { user ->
-                binding.profileUsername.text = "${user.username}"
-                binding.profileLocation.text = "${user.email}"
-                // Glide.with(binding.farmerProfile).load(user.farmerUrl).into(binding.farmerProfile)
+            ) { profile ->
+                binding.profileUsername.text = "${profile.username}"
+                binding.profileLocation.text = "${profile.email}"
+                Glide.with(binding.farmerProfile).load(profile.farmerUrl).into(binding.farmerProfile)
             }
         )
     }
-
-     */
 
     private fun initializerListeners() {
         binding.logOutCardView.setOnClickListener {
@@ -86,7 +86,7 @@ class ProfileFragment : Fragment() {
                 .show()
         }
         binding.farmerProfile.setOnClickListener {
-            pickerContent.launch("image/*")
+            // /pickerContent.launch("image/*")
         }
         /* binding.profileImage.setOnClickListener {
             pickerContent.launch("image/*")

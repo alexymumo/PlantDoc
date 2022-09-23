@@ -27,7 +27,7 @@ class HomeFragment : Fragment() {
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
-        savedInstanceState: Bundle?,
+        savedInstanceState: Bundle?
     ): View {
         binding = FragmentHomeBinding.inflate(inflater, container, false)
         val view = binding.root
@@ -35,7 +35,7 @@ class HomeFragment : Fragment() {
         circularImage = view.findViewById(R.id.profileImage)
         notificationImage = view.findViewById(R.id.notificationImage)
 
-        circularImage.setOnClickListener {
+        /*circularImage.setOnClickListener {
             findNavController().navigate(R.id.profileFragment)
         }
         notificationImage.setOnClickListener {
@@ -46,7 +46,7 @@ class HomeFragment : Fragment() {
         }
         binding.cardViewAdmin.setOnClickListener {
             findNavController().navigate(R.id.adminFragment)
-        }
+        }*/
         binding.cardViewScan.setOnClickListener {
             findNavController().navigate(R.id.classifierActivity)
         }
@@ -80,7 +80,7 @@ class HomeFragment : Fragment() {
                 onError = {
                 }
             ) { user ->
-                username.text = "Hello ${user.username?.substring(0,user.username.indexOf(' '))},"
+                username.text = "Hello ${user.username},"
             }
         )
     }
