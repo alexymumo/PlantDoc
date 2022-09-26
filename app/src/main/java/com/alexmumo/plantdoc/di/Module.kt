@@ -1,10 +1,7 @@
 package com.alexmumo.plantdoc.di
 
 import android.content.Context
-import com.alexmumo.plantdoc.data.repository.AuthRepository
-import com.alexmumo.plantdoc.data.repository.AuthRepositoryImpl
-import com.alexmumo.plantdoc.data.repository.UserRepository
-import com.alexmumo.plantdoc.data.repository.UserRepositoryImpl
+import com.alexmumo.plantdoc.data.repository.*
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -25,6 +22,12 @@ object Module {
 
     @Singleton
     @Provides
+    fun providesFarmersRepositoryImpl(): FarmersRepository {
+        return FarmerRepositoryImpl()
+    }
+
+    @Singleton
+    @Provides
     fun providesUserRepositoryImpl(): UserRepository {
         return UserRepositoryImpl()
     }
@@ -36,5 +39,6 @@ object Module {
     @Provides
     fun providesDispatcher() = Dispatchers.Main as CoroutineDispatcher
 }
+
 
 

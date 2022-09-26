@@ -3,15 +3,16 @@ package com.alexmumo.plantdoc.util
 import androidx.lifecycle.Observer
 
 class Event<out T>(private val content: T) {
-    var beingHandled = false
+    var hasBeenHandled = false
         private set
 
-    fun fetchContentIfNotHandled(): T? {
-        return if (!beingHandled) {
-            beingHandled = true
+    fun getContentIfNotHandled(): T? {
+        return if (!hasBeenHandled) {
+            hasBeenHandled = true
             content
         } else null
     }
+
     fun peekContent() = content
 }
 
@@ -27,7 +28,7 @@ class EventObserver<T>(
                 content.data?.let(onSuccess)
             }
             is Resource.Error -> {
-                t.fetchContentIfNotHandled().let {
+                t.getContentIfNotHandled().let {
                     onError?.let { error ->
                         error(it?.message!!)
                     }

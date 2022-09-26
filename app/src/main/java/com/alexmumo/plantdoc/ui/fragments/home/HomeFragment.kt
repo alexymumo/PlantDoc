@@ -38,9 +38,38 @@ class HomeFragment : Fragment() {
         circularImage.setOnClickListener {
             findNavController().navigate(R.id.profileFragment)
         }
+        notificationImage.setOnClickListener {
+            findNavController().navigate(R.id.notificationFragment)
+        }
+        binding.cardViewScan.setOnClickListener {
+            findNavController().navigate(R.id.classifierActivity)
+        }
+        binding.cardViewAdmin.setOnClickListener {
+            findNavController().navigate(R.id.adminFragment)
+        }
+        binding.cardViewScan.setOnClickListener {
+            findNavController().navigate(R.id.classifierActivity)
+        }
         subscribeToObservers()
+        // subscribeToProfileObservers()
         return view
     }
+
+    /* private fun subscribeToProfileObservers() {
+         userViewModel.user.observe(
+             viewLifecycleOwner,
+             EventObserver(
+                 onError = {},
+                 onLoading = {},
+
+             ) { user ->
+                 Glide.with(circularImage).load(user.farmerUrl).centerCrop().into(circularImage)
+             }
+         )
+     }
+
+     */
+
     @SuppressLint("SetTextI18n")
     private fun subscribeToObservers() {
         userViewModel.user.observe(
@@ -51,9 +80,8 @@ class HomeFragment : Fragment() {
                 onError = {
                 }
             ) { user ->
-                username.text = "Hello ${user.name}"
+                username.text = "Hello ${user.username?.substring(0,user.username.indexOf(' '))},"
             }
         )
     }
 }
-

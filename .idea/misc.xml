@@ -4,19 +4,29 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="app/src/main/res/drawable/ic_background.xml" value="0.128" />
+        <entry key="app/src/main/res/drawable/profile_background.xml" value="0.123" />
+        <entry key="app/src/main/res/layout/activity_another.xml" value="0.17962962962962964" />
         <entry key="app/src/main/res/layout/activity_classifier.xml" value="0.22" />
+        <entry key="app/src/main/res/layout/activity_classifier_code.xml" value="0.12685185185185185" />
+        <entry key="app/src/main/res/layout/activity_classifier_java.xml" value="0.19322916666666667" />
         <entry key="app/src/main/res/layout/activity_machine.xml" value="0.19322916666666667" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.16883116883116883" />
         <entry key="app/src/main/res/layout/activity_onboarding.xml" value="0.19322916666666667" />
         <entry key="app/src/main/res/layout/bottom_sheet.xml" value="0.19322916666666667" />
+        <entry key="app/src/main/res/layout/farmer_item.xml" value="0.33" />
         <entry key="app/src/main/res/layout/fragment_about.xml" value="0.19322916666666667" />
+        <entry key="app/src/main/res/layout/fragment_admin.xml" value="0.16018518518518518" />
         <entry key="app/src/main/res/layout/fragment_dashboard.xml" value="0.19322916666666667" />
+        <entry key="app/src/main/res/layout/fragment_farmers_list.xml" value="0.33" />
         <entry key="app/src/main/res/layout/fragment_forgot_password.xml" value="0.21" />
-        <entry key="app/src/main/res/layout/fragment_home.xml" value="0.22" />
-        <entry key="app/src/main/res/layout/fragment_login.xml" value="0.21614583333333334" />
+        <entry key="app/src/main/res/layout/fragment_home.xml" value="0.33" />
+        <entry key="app/src/main/res/layout/fragment_login.xml" value="0.25" />
+        <entry key="app/src/main/res/layout/fragment_maps.xml" value="0.19322916666666667" />
+        <entry key="app/src/main/res/layout/fragment_notification.xml" value="0.17777777777777778" />
         <entry key="app/src/main/res/layout/fragment_onboarding.xml" value="0.17760416666666667" />
+        <entry key="app/src/main/res/layout/fragment_predict.xml" value="0.19322916666666667" />
         <entry key="app/src/main/res/layout/fragment_profile.xml" value="0.21614583333333334" />
-        <entry key="app/src/main/res/layout/fragment_register.xml" value="0.21614583333333334" />
+        <entry key="app/src/main/res/layout/fragment_register.xml" value="0.25" />
         <entry key="app/src/main/res/layout/fragment_select.xml" value="0.15" />
         <entry key="app/src/main/res/layout/fragment_settings.xml" value="0.19322916666666667" />
         <entry key="app/src/main/res/layout/fragment_splash.xml" value="0.21614583333333334" />

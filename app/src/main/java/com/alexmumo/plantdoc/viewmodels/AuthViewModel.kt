@@ -14,7 +14,6 @@ import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.CoroutineDispatcher
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.MutableStateFlow
-import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.launch
 import javax.inject.Inject
 
@@ -35,8 +34,8 @@ class AuthViewModel @Inject constructor(
     val forgot: LiveData<Event<Resource<Any>>> = _forgot /*
     * register function with name, email, phone, password
     * */
-    fun registerFarmer(fullname: String, email: String, phone: String, password: String) {
-        val error = if (fullname.isEmpty() || email.isEmpty() || phone.isEmpty() || password.isEmpty()) {
+    fun registerFarmer(email: String,username: String, phone: String, password: String) {
+        val error = if (username.isEmpty() || email.isEmpty() || phone.isEmpty() || password.isEmpty()) {
             "Cannot be Empty"
         } else if (!Patterns.EMAIL_ADDRESS.matcher(email).matches()) {
             "Not Valid"
@@ -51,7 +50,7 @@ class AuthViewModel @Inject constructor(
         }
         _signup.postValue(Event(Resource.Loading()))
         viewModelScope.launch(Dispatchers.Main) {
-            val register = authRepository.registerFarmer(fullname, email, phone, password)
+            val register = authRepository.registerFarmer(email,username, phone, password)
             _signup.postValue(Event(register))
         }
     }

@@ -28,8 +28,12 @@ class RegisterFragment : Fragment() {
         initRegister()
         binding.registerBtn.setOnClickListener {
             viewModel.registerFarmer(
-                binding.nameLayout.editText?.text.toString(),
+                /*binding.emailText.text.toString(),
+                binding.nameText.text.toString(),
+                binding.locationText.text.toString(),
+                binding.passwordText.text.toString()*/
                 binding.emailLayout.editText?.text.toString(),
+                binding.nameLayout.editText?.text.toString(),
                 binding.locationLayout.editText?.text.toString(),
                 binding.passwordLayout.editText?.text.toString()
             )
@@ -52,7 +56,7 @@ class RegisterFragment : Fragment() {
                 }
             ) {
                 binding.progressBar.isVisible = false
-                Toast.makeText(requireContext(), "Successful", Toast.LENGTH_LONG).show()
+                Toast.makeText(requireContext(), "Account Created", Toast.LENGTH_LONG).show()
             }
         )
     }
