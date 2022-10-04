@@ -22,7 +22,7 @@ class RegisterFragment : Fragment() {
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
-        savedInstanceState: Bundle?,
+        savedInstanceState: Bundle?
     ): View {
         binding = FragmentRegisterBinding.inflate(layoutInflater)
         initRegister()
@@ -32,10 +32,10 @@ class RegisterFragment : Fragment() {
                 binding.nameText.text.toString(),
                 binding.locationText.text.toString(),
                 binding.passwordText.text.toString()*/
-                binding.emailLayout.editText?.text.toString(),
-                binding.nameLayout.editText?.text.toString(),
-                binding.locationLayout.editText?.text.toString(),
-                binding.passwordLayout.editText?.text.toString()
+                binding.emailLayout.editText?.text.toString().trim(),
+                binding.nameLayout.editText?.text.toString().trim(),
+                binding.locationLayout.editText?.text.toString().trim(),
+                binding.passwordLayout.editText?.text.toString().trim()
             )
         }
         binding.signinTv.setOnClickListener {
@@ -56,7 +56,7 @@ class RegisterFragment : Fragment() {
                 }
             ) {
                 binding.progressBar.isVisible = false
-                Toast.makeText(requireContext(), "Account Created", Toast.LENGTH_LONG).show()
+                Toast.makeText(requireContext(), "Email Verification Send to your email", Toast.LENGTH_LONG).show()
             }
         )
     }

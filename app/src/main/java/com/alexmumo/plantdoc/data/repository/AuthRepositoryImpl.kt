@@ -12,7 +12,7 @@ import kotlinx.coroutines.withContext
 
 class AuthRepositoryImpl : AuthRepository {
     private val firebaseAuth = FirebaseAuth.getInstance()
-    private val firebaseDatabaseReference = FirebaseDatabase.getInstance().getReference("Farmers")
+    private val firebaseDatabaseReference = FirebaseDatabase.getInstance().getReference("Farmer")
     override suspend fun registerFarmer(
         email: String,
         username: String,
@@ -22,6 +22,7 @@ class AuthRepositoryImpl : AuthRepository {
         return withContext(Dispatchers.IO) {
             safeCall {
                 val register = firebaseAuth.createUserWithEmailAndPassword(email, password).await()
+                firebaseAuth.currentUser?.sendEmailVerification()?.await()
                 val uid = register.user?.uid!!
                 val user = User(uid, email, username, phone)
                 firebaseDatabaseReference.child(uid).setValue(user).await()

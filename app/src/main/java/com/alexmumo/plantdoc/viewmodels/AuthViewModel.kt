@@ -8,12 +8,10 @@ import androidx.lifecycle.viewModelScope
 import com.alexmumo.plantdoc.data.repository.AuthRepository
 import com.alexmumo.plantdoc.util.Event
 import com.alexmumo.plantdoc.util.Resource
-import com.alexmumo.plantdoc.util.Response
 import com.google.firebase.auth.AuthResult
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.CoroutineDispatcher
 import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.launch
 import javax.inject.Inject
 
@@ -34,7 +32,7 @@ class AuthViewModel @Inject constructor(
     val forgot: LiveData<Event<Resource<Any>>> = _forgot /*
     * register function with name, email, phone, password
     * */
-    fun registerFarmer(email: String,username: String, phone: String, password: String) {
+    fun registerFarmer(email: String, username: String, phone: String, password: String) {
         val error = if (username.isEmpty() || email.isEmpty() || phone.isEmpty() || password.isEmpty()) {
             "Cannot be Empty"
         } else if (!Patterns.EMAIL_ADDRESS.matcher(email).matches()) {
@@ -50,7 +48,7 @@ class AuthViewModel @Inject constructor(
         }
         _signup.postValue(Event(Resource.Loading()))
         viewModelScope.launch(Dispatchers.Main) {
-            val register = authRepository.registerFarmer(email,username, phone, password)
+            val register = authRepository.registerFarmer(email, username, phone, password)
             _signup.postValue(Event(register))
         }
     }
