@@ -28,10 +28,10 @@ class MapsFragment : Fragment(), OnMapReadyCallback {
     private var databaseReference: DatabaseReference = firebaseDatabase.getReference("farmers_location")
     private lateinit var googleMap: GoogleMap
     private val callback = OnMapReadyCallback { googleMap ->
-        // val current = LatLng(-0.3966685, 36.9586995)
-        // val zoomLevel = 15f
-        // googleMap.addMarker(MarkerOptions().position(current).title("Nyeri"))
-        // googleMap.moveCamera(CameraUpdateFactory.newLatLngZoom(current, zoomLevel))
+        val current = LatLng(-0.3966685, 36.9586995)
+        val zoomLevel = 15f
+        googleMap.addMarker(MarkerOptions().position(current).title("Nyeri"))
+        googleMap.moveCamera(CameraUpdateFactory.newLatLngZoom(current, zoomLevel))
     }
     override fun onCreateView(
         inflater: LayoutInflater,
