@@ -1,6 +1,6 @@
 package com.alexmumo.plantdoc.util
 
-inline fun <T> safeCall(action: () -> Resource<T>): Resource<T> {
+inline fun <T : Any> safeCall(action: () -> Resource<T>): Resource<T> {
     return try {
         action()
     } catch (e: Exception) {

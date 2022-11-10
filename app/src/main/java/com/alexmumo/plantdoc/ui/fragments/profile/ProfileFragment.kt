@@ -65,7 +65,7 @@ class ProfileFragment : Fragment() {
             ) { profile ->
                 binding.profileUsername.text = "${profile.username}"
                 binding.profileLocation.text = "${profile.email}"
-                Glide.with(binding.farmerProfile).load(profile.farmerUrl).into(binding.farmerProfile)
+                //Glide.with(binding.farmerProfile).load(profile.farmerUrl).into(binding.farmerProfile)
             }
         )
     }

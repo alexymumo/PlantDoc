@@ -5,6 +5,6 @@ data class User(
     val email: String? = "",
     val username: String? = "",
     val phone: String? = "",
-    val farmerUrl: String? = "",
+    // val farmerUrl: String? = "",
     val password: String? = ""
 )
