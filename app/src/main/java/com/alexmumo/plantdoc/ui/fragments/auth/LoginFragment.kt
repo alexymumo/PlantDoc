@@ -1,6 +1,5 @@
 package com.alexmumo.plantdoc.ui.fragments.auth
 
-import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -11,7 +10,6 @@ import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
 import com.alexmumo.plantdoc.R
 import com.alexmumo.plantdoc.databinding.FragmentLoginBinding
-import com.alexmumo.plantdoc.ui.fragments.home.HomeFragment
 import com.alexmumo.plantdoc.viewmodels.AuthViewModel
 import com.google.firebase.auth.FirebaseAuth
 import dagger.hilt.android.AndroidEntryPoint

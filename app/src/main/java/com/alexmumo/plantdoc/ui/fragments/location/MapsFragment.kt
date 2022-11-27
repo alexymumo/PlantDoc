@@ -50,6 +50,8 @@ class MapsFragment : Fragment(), OnMapReadyCallback {
         requestPermission()
     }
 
+    // display markers from realtime database
+    
     private fun getFarmersLocation() {
         /*get farmers location at realtime*/
         val locationListener = object : ValueEventListener {

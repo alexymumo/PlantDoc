@@ -13,10 +13,12 @@ import android.provider.MediaStore
 import android.widget.Toast
 import androidx.annotation.RequiresApi
 import androidx.appcompat.app.AppCompatActivity
+import com.alexmumo.plantdoc.data.entity.Plant
 import com.alexmumo.plantdoc.databinding.ActivityClassifierBinding
 import com.alexmumo.plantdoc.ml.Classifier
+import com.google.firebase.database.DatabaseReference
+import com.google.firebase.database.FirebaseDatabase
 import java.io.IOException
-
 
 @Suppress("DEPRECATION")
 class ClassifierActivity : AppCompatActivity() {
@@ -31,6 +33,7 @@ class ClassifierActivity : AppCompatActivity() {
     private val modelPath = "maize.tflite"
     private val labelPath = "labels.txt"
     private val samplePath = "sample.jpg"
+    private lateinit var databaseReference: DatabaseReference
 
     @SuppressLint("SetTextI18n")
     @RequiresApi(Build.VERSION_CODES.O)
@@ -38,6 +41,8 @@ class ClassifierActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityClassifierBinding.inflate(layoutInflater)
         setContentView(binding.root)
+
+        databaseReference = FirebaseDatabase.getInstance().getReference("Disease")
         classifier = Classifier(assets, modelPath, labelPath, inputSize)
 
         resources.assets.open(samplePath).use {
@@ -60,6 +65,15 @@ class ClassifierActivity : AppCompatActivity() {
         binding.predict.setOnClickListener {
             val predict = classifier.recognizeImage(bitmap).firstOrNull()
             binding.tvResults.text = predict?.title + "\n Confidence:" + predict?.confidence
+
+            // saving results to realtime database
+            val diseaseId = databaseReference.push().key
+            val disease = predict?.title.toString()
+            val confidence = predict?.confidence.toString()
+            val results = Plant(diseaseId, disease, confidence)
+            if (diseaseId != null) {
+                databaseReference.child("Results").child(diseaseId).setValue(results)
+            }
         }
     }
 
