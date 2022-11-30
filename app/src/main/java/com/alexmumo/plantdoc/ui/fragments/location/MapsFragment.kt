@@ -22,6 +22,9 @@ import com.google.firebase.database.ktx.database
 import com.google.firebase.ktx.Firebase
 
 class MapsFragment : Fragment(), OnMapReadyCallback {
+
+    // get current user location and save to realtime database
+    
     private val REQUEST_PERMISSION_CODE = 1
     private lateinit var binding: FragmentMapsBinding
     private var firebaseDatabase: FirebaseDatabase = FirebaseDatabase.getInstance()
