@@ -34,7 +34,7 @@ class HomeFragment : Fragment() {
         circularImage = view.findViewById(R.id.profileImage)
         notificationImage = view.findViewById(R.id.notificationImage)
         binding.cardViewLocation.setOnClickListener {
-            findNavController().navigate(R.id.mapsFragment)
+            findNavController().navigate(R.id.mapsActivity)
         }
         /*circularImage.setOnClickListener {
             findNavController().navigate(R.id.profileFragment)
@@ -49,7 +49,7 @@ class HomeFragment : Fragment() {
             findNavController().navigate(R.id.adminFragment)
         }*/
         binding.cardViewAdmin.setOnClickListener {
-            findNavController().navigate(R.id.adminFragment)
+            findNavController().navigate(R.id.diseaseActivity)
         }
         binding.cardViewScan.setOnClickListener {
             findNavController().navigate(R.id.classifierActivity)

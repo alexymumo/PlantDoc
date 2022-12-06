@@ -37,6 +37,12 @@
         <action
             android:id="@+id/action_homeFragment_to_adminFragment"
             app:destination="@id/adminFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_mapsActivity"
+            app:destination="@id/mapsActivity" />
+        <action
+            android:id="@+id/action_homeFragment_to_diseaseActivity"
+            app:destination="@id/diseaseActivity" />
     </fragment>
     <fragment
         android:id="@+id/loginFragment"
@@ -123,4 +129,14 @@
         android:name="com.alexmumo.plantdoc.ui.fragments.others.AdminFragment"
         android:label="fragment_admin"
         tools:layout="@layout/fragment_admin" />
+    <activity
+        android:id="@+id/mapsActivity"
+        android:name="com.alexmumo.plantdoc.ui.activity.MapsActivity"
+        android:label="activity_maps"
+        tools:layout="@layout/activity_maps" />
+    <activity
+        android:id="@+id/diseaseActivity"
+        android:name="com.alexmumo.plantdoc.ui.activity.DiseaseActivity"
+        android:label="activity_disease"
+        tools:layout="@layout/activity_disease" />
 </navigation>

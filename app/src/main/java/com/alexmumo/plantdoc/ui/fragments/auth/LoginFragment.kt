@@ -58,19 +58,4 @@ class LoginFragment : Fragment() {
             findNavController().navigate(R.id.forgotPassword)
         }
     }
-
-    /*
-    private fun initLogin() {
-        viewModel.login.observe(
-            viewLifecycleOwner,
-            EventObserver(
-                onError = {
-                },
-                onLoading = {
-                }
-            ) {
-                findNavController().navigate(R.id.homeFragment)
-            }
-        )
-    }*/
 }

@@ -25,14 +25,14 @@
         android:usesCleartextTraffic="true"
         tools:targetApi="31">
         <activity
-            android:name=".LocationActivity"
+            android:name=".ui.activity.DiseaseActivity"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
         <activity
-            android:name=".MapsActivity"
+            android:name=".ui.activity.MapsActivity"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
